@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Maryam Mottaghi Foundation</title>
+  <meta name="description" content="The Maryam Mottaghi Foundation honors the life and spirit of Maryam Mottaghi through educational support, compassion, and service." />
+  <style>
+    :root {
+      --bg: #fcfaf6;
+      --surface: #ffffff;
+      --text: #2d251d;
+      --muted: #6b5e52;
+      --line: #e9dfd1;
+      --gold: #b98b2f;
+      --gold-deep: #8c6823;
+      --soft: #f5efe5;
+      --shadow: 0 12px 35px rgba(63, 42, 16, 0.08);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(252, 250, 246, 0.9);
+      border-bottom: 1px solid rgba(185, 139, 47, 0.12);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .brand-mark {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .brand-name {
+      font-size: 1.18rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.1rem;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a:hover { color: var(--gold-deep); }
+
+    .hero {
+      padding: 6rem 0 4.5rem;
+      background:
+        radial-gradient(circle at top right, rgba(185,139,47,0.10), transparent 35%),
+        linear-gradient(180deg, #fffdf9 0%, var(--bg) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid rgba(185, 139, 47, 0.28);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      color: var(--gold-deep);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 1rem; }
+
+    h1 {
+      font-size: clamp(2.6rem, 5vw, 4.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      max-width: 12ch;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 0 1.5rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.3rem;
+      border-radius: 999px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+      color: white;
+    }
+
+    .btn-secondary {
+      border-color: rgba(185, 139, 47, 0.35);
+      background: rgba(255,255,255,0.85);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(185,139,47,0.16), transparent 34%);
+      pointer-events: none;
+    }
+
+    .quote-mark {
+      font-size: 4rem;
+      color: rgba(185,139,47,0.22);
+      line-height: 1;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+      margin: -1rem 0 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-source {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: 0.92rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: 4.8rem 0;
+      border-top: 1px solid rgba(185, 139, 47, 0.10);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 2rem;
+    }
+
+    .section-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 68ch;
+    }
+
+    .mission-grid,
+    .program-grid,
+    .support-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .mission-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .card p,
+    .card li { color: var(--muted); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.5rem;
+    }
+
+    .portrait-card {
+      min-height: 100%;
+      background: linear-gradient(180deg, #fff, #f6f0e6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .portrait-inner {
+      border: 1px solid rgba(185, 139, 47, 0.25);
+      border-radius: 999px;
+      width: 240px;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, rgba(185,139,47,0.18), rgba(255,255,255,0.55));
+      box-shadow: inset 0 0 0 12px rgba(255,255,255,0.55);
+      padding: 1rem;
+      font-size: 1.1rem;
+      color: var(--gold-deep);
+    }
+
+    .program-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .program-card .num {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--gold-deep);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .support-grid { grid-template-columns: 1.1fr 0.9fr; }
+
+    .donate-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    .status-note {
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      background: rgba(185, 139, 47, 0.10);
+      border: 1px solid rgba(185, 139, 47, 0.18);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.94rem;
+    }
+
+    .memorial {
+      background: linear-gradient(180deg, rgba(185,139,47,0.08), rgba(255,255,255,0));
+    }
+
+    .memorial-block {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .memorial-block p:last-child { margin-bottom: 0; }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.8rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.94rem;
+    }
+
+    .footer-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .section-head,
+      .about-grid,
+      .support-grid,
+      .contact,
+      .mission-grid,
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 4.5rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .hero-card, .card, .memorial-block { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand">
+        <span class="brand-mark">In Memory. In Service. In Light.</span>
+        <a class="brand-name" href="#top">The Maryam Mottaghi Foundation</a>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#mission">Mission</a>
+        <a href="#about">About Maryam</a>
+        <a href="#programs">Programs</a>
+        <a href="#support">Donate</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">A legacy of love, sacrifice, and education</span>
+          <h1>Honoring Maryam Mottaghi through service and opportunity.</h1>
+          <p>
+            The Maryam Mottaghi Foundation was established to carry forward the spirit of a woman whose life was marked by selflessness, faith, resilience, and devotion to others. Through educational support, compassionate outreach, and programs rooted in dignity and hope, the foundation seeks to uplift lives in her honor.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#support">Support the Foundation</a>
+            <a class="btn btn-secondary" href="#about">Read Maryam’s Story</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Foundation reflection">
+          <div class="quote-mark">“</div>
+          <p class="quote">
+            This foundation exists to preserve a life of extraordinary kindness and transform remembrance into enduring service.
+          </p>
+          <div class="quote-source">The Maryam Mottaghi Foundation</div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Mission</span>
+            <h2>A foundation rooted in compassion, faith, and educational upliftment.</h2>
+          </div>
+          <p class="lede">
+            Inspired by Maryam Mottaghi’s life of sacrifice and love, the foundation is dedicated to supporting individuals facing barriers to education, stability, and opportunity. Our work is guided by service, integrity, and the belief that every human being deserves encouragement, dignity, and the chance to flourish.
+          </p>
+        </div>
+
+        <div class="mission-grid">
+          <article class="card">
+            <h3>Educational support</h3>
+            <p>Provide scholarships, tools, and assistance that help students and emerging learners continue their education with confidence and hope.</p>
+          </article>
+          <article class="card">
+            <h3>Mentorship and encouragement</h3>
+            <p>Create pathways for guidance, belonging, and practical support for those navigating personal and financial barriers.</p>
+          </article>
+          <article class="card">
+            <h3>Service in Maryam’s spirit</h3>
+            <p>Honor a life of devotion and sacrifice by advancing compassionate work that reflects her generosity, humility, and faith.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-label">About Maryam</span>
+            <h2>A life that gave more than it ever asked to receive.</h2>
+          </div>
+          <p class="lede">
+            Maryam Mottaghi was a woman of deep faith, extraordinary tenderness, and quiet strength. She devoted her life to her family and to the well-being of others, carrying burdens with grace and offering love without condition. This foundation exists not only in her memory, but in continuity with the values she lived every day.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card portrait-card">
+            <div class="portrait-inner">
+              A place for Maryam’s portrait,<br />rose emblem, or memorial image
+            </div>
+          </div>
+          <article class="card">
+            <h3>Why this foundation was created</h3>
+            <p>
+              Maryam’s life was defined by sacrifice, service, and an unwavering capacity to love. She uplifted others even through hardship, and her presence brought comfort, warmth, and dignity wherever she went. The foundation was created so that her light would continue to reach people she never had the chance to meet.
+            </p>
+            <p>
+              In honoring her, we hope to support those who need practical help, encouragement, and access to opportunity — especially in educational settings where one act of support can change the course of a life.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Programs</span>
+            <h2>Areas of support the foundation seeks to grow over time.</h2>
+          </div>
+          <p class="lede">
+            The Maryam Mottaghi Foundation is in its early stages. As it grows, it aims to build meaningful, carefully stewarded programs that reflect both urgent need and enduring impact.
+          </p>
+        </div>
+
+        <div class="program-grid">
+          <article class="card program-card">
+            <div class="num">1</div>
+            <h3>Scholarships</h3>
+            <p>Financial support for students and learners whose educational path has been hindered by hardship or lack of access.</p>
+          </article>
+          <article class="card program-card">
+            <div class="num">2</div>
+            <h3>Learning resources</h3>
+            <p>Books, technology, educational materials, and practical assistance that make continued study possible.</p>
+          </article>
+          <article class="card program-card">
+            <div class="num">3</div>
+            <h3>Mentorship and outreach</h3>
+            <p>Programs shaped around encouragement, guidance, and compassionate support for those facing difficult circumstances.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="wrap support-grid">
+        <article class="card donate-box">
+          <div>
+            <span class="section-label">Support</span>
+            <h2>Help carry this work forward.</h2>
+          </div>
+          <p class="lede">
+            Your support helps establish and strengthen a foundation created in honor of a remarkable woman whose life was devoted to others. Contributions will help the foundation grow its educational and service-based efforts in Maryam’s memory.
+          </p>
+          <div class="status-note">
+            Donation information can be displayed here. While the foundation’s IRS recognition process is underway, this section may be updated as administrative details are finalized.
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:info@maryammottaghifoundation.org?subject=Support%20the%20Foundation">Inquire About Giving</a>
+            <a class="btn btn-secondary" href="#contact">Contact the Foundation</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Ways to support</h3>
+          <ul>
+            <li>Make a contribution in honor of Maryam’s life and legacy.</li>
+            <li>Share the foundation with others who believe in education, dignity, and compassionate service.</li>
+            <li>Reach out to explore volunteer, partnership, or advisory support.</li>
+          </ul>
+          <p>
+            The foundation intends to steward all support with care, transparency, and fidelity to its mission.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="memorial">
+      <div class="wrap memorial-block">
+        <span class="section-label">In remembrance</span>
+        <h2>Built in memory, sustained through love.</h2>
+        <p>
+          The Maryam Mottaghi Foundation is more than an organization. It is a living expression of remembrance — a way of ensuring that the love, sacrifice, and faith Maryam embodied continue to bless others. Every act of support, every opportunity made possible, and every life encouraged through this work stands as a testament to the beauty of her spirit.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Contact</span>
+            <h2>Connect with the foundation.</h2>
+          </div>
+          <p class="lede">
+            For questions, partnership inquiries, or interest in supporting the foundation’s work, please use the contact details below.
+          </p>
+        </div>
+
+        <div class="contact">
+          <article class="card">
+            <h3>Foundation contact</h3>
+            <ul class="contact-list">
+              <li><strong>Name:</strong> The Maryam Mottaghi Foundation</li>
+              <li><strong>Website:</strong> maryammottaghifoundation.org</li>
+              <li><strong>Email:</strong> info@maryammottaghifoundation.org</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Launch notes</h3>
+            <p>
+              This site is the foundation’s initial public presence and may continue to evolve as administrative approvals, donation workflows, and program details are finalized.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-line">
+      <div>© <span id="year"></span> The Maryam Mottaghi Foundation</div>
+      <div>Created with reverence, service, and hope.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
