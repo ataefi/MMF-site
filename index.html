@@ -527,6 +527,28 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .photo-card img { height: auto; }
     }
+/* Default image behavior */
+.photo-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Jamshid wedding — bring image DOWN */
+.photo-focus-jamshid {
+  object-position: center 75%;
+}
+
+/* Graduation — show full body */
+.photo-focus-grad {
+  object-position: center 25%;
+}
+
+/* Bahai building — show top */
+.photo-focus-bahai {
+  object-position: center 10%;
+}
   </style>
 </head>
 <body>
@@ -672,7 +694,7 @@
 
             <div class="family-grid">
               <figure class="photo-card">
-                <img src="./maryam-jamshid.jpg" alt="Maryam and Jamshid" />
+                <img src="./maryam-jamshid.jpg" class="photo-focus-jamshid" />
                 <figcaption>Maryam and Jamshid</figcaption>
               </figure>
               <figure class="photo-card">
@@ -704,11 +726,11 @@
                 <figcaption>Pakistan and resilience</figcaption>
               </figure>
               <figure class="photo-card">
-                <img src="./maryam-graduation.jpg" alt="Maryam at graduation" />
+                <img src="./maryam-graduation.jpg" class="photo-focus-grad" />
                 <figcaption>Education and achievement</figcaption>
               </figure>
               <figure class="photo-card">
-                <img src="./maryam-bahai-center.jpg" alt="Maryam at a Bahá’í center" />
+                <img src="./maryam-bahai-center.jpg" class="photo-focus-bahai" />
                 <figcaption>Faith and service</figcaption>
               </figure>
             </div>
@@ -769,7 +791,7 @@
             <figcaption>Maryam in the garden</figcaption>
           </figure>
           <figure class="photo-card">
-            <img src="./maryam-crystal-lake.jpg" alt="Maryam smiling near a peacock" />
+            <img src="./maryam-crystal-lake.jpg" alt="Maryam smiling at Crystal Lake" />
             <figcaption>Joy in nature</figcaption>
           </figure>
           <figure class="photo-card">
