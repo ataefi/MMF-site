@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Maryam Mottaghi Foundation</title>
-  <meta name="description" content="The Maryam Mottaghi Foundation honors the life and spirit of Maryam Mottaghi through educational support, compassion, and service." />
+  <meta name="description" content="The Maryam Mottaghi Foundation honors the life and spirit of Maryam Mottaghi through educational support, compassion, faith, and service." />
   <style>
     :root {
       --bg: #fcfaf6;
@@ -20,7 +20,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -32,6 +31,7 @@
     }
 
     a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
 
     .wrap {
       width: min(calc(100% - 2rem), var(--max));
@@ -43,7 +43,7 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(10px);
-      background: rgba(252, 250, 246, 0.9);
+      background: rgba(252, 250, 246, 0.93);
       border-bottom: 1px solid rgba(185, 139, 47, 0.12);
     }
 
@@ -59,6 +59,17 @@
       display: flex;
       flex-direction: column;
       gap: 0.2rem;
+      text-align: center;
+    }
+
+    .brand-logo {
+      width: 220px;
+      height: auto;
+      margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      mix-blend-mode: multiply;
     }
 
     .brand-mark {
@@ -167,12 +178,19 @@
       color: var(--text);
     }
 
-    .hero-card {
+    .hero-card,
+    .card,
+    .story-card,
+    .prayer-card,
+    .memorial-block {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 28px;
-      padding: 2rem;
       box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 2rem;
       position: relative;
       overflow: hidden;
     }
@@ -242,7 +260,9 @@
 
     .mission-grid,
     .program-grid,
-    .support-grid {
+    .support-grid,
+    .gallery-grid,
+    .family-grid {
       display: grid;
       gap: 1.25rem;
     }
@@ -252,21 +272,9 @@
       margin-top: 1rem;
     }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.65rem;
-    }
-
-    .card p,
-    .card li { color: var(--muted); }
+    .card { padding: 1.5rem; }
+    .card h3 { font-size: 1.2rem; margin-bottom: 0.65rem; }
+    .card p, .card li { color: var(--muted); }
 
     .about-grid {
       display: grid;
@@ -316,6 +324,95 @@
       border-radius: 999px;
     }
 
+    .story-section {
+      background: linear-gradient(180deg, rgba(185,139,47,0.08), rgba(255,255,255,0));
+    }
+
+    .story-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .story-card { padding: 2rem; }
+    .story-card p { color: var(--muted); margin: 0 0 1rem; }
+    .story-card p:last-child { margin-bottom: 0; }
+
+    .story-divider {
+      height: 1px;
+      background: var(--line);
+      margin: 1.6rem 0;
+    }
+
+    .prayer-stack {
+      display: grid;
+      gap: 1rem;
+      position: sticky;
+      top: 130px;
+    }
+
+    .prayer-card {
+      padding: 1.25rem;
+      background: #fffdf9;
+      border-left: 4px solid rgba(185,139,47,0.55);
+    }
+
+    .prayer-symbol {
+      max-width: 78px;
+      display: block;
+      margin: 0 0 0.7rem;
+      opacity: 0.88;
+      mix-blend-mode: multiply;
+    }
+
+    .prayer-card blockquote {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .prayer-card cite {
+      display: block;
+      margin-top: 0.8rem;
+      color: var(--gold-deep);
+      font-style: normal;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .family-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 1.25rem;
+    }
+
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+
+    figure.photo-card {
+      margin: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card figcaption {
+      padding: 0.8rem 0.95rem;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+    }
+
     .program-grid { grid-template-columns: repeat(3, 1fr); }
 
     .program-card .num {
@@ -356,14 +453,7 @@
       background: linear-gradient(180deg, rgba(185,139,47,0.08), rgba(255,255,255,0));
     }
 
-    .memorial-block {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 2rem;
-      box-shadow: var(--shadow);
-    }
-
+    .memorial-block { padding: 2rem; }
     .memorial-block p:last-child { margin-bottom: 0; }
 
     .contact {
@@ -398,6 +488,12 @@
       flex-wrap: wrap;
     }
 
+    @media (max-width: 1050px) {
+      .story-layout { grid-template-columns: 1fr; }
+      .prayer-stack { position: static; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 960px) {
       .hero-grid,
       .section-head,
@@ -405,44 +501,46 @@
       .support-grid,
       .contact,
       .mission-grid,
-      .program-grid {
+      .program-grid,
+      .family-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 4.5rem;
-      }
+      .hero { padding-top: 4.5rem; }
 
       .nav {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .nav-links {
-        justify-content: flex-start;
-      }
+      .brand { text-align: left; }
+      .brand-logo { margin-left: 0; }
+      .nav-links { justify-content: flex-start; }
     }
 
     @media (max-width: 560px) {
       .actions { flex-direction: column; }
       .btn { width: 100%; }
-      .hero-card, .card, .memorial-block { padding: 1.25rem; }
+      .hero-card, .card, .story-card, .memorial-block, .prayer-card { padding: 1.25rem; }
+      .brand-logo { width: 170px; }
+      .portrait-inner { width: 230px; height: 230px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .photo-card img { height: auto; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="wrap nav">
-     <div class="brand" style="text-align:center;">
-  <img src="./MMF Logo.jpg" alt="Maryam Mottaghi Foundation Logo" style="width:220px; height:auto; margin-bottom:10px; display:block; margin-left:auto; margin-right:auto;" />
-       
-  <span class="brand-mark">IN MEMORY. IN SERVICE. IN LIGHT.</span>
-
-  <a class="brand-name" href="#top">The Maryam Mottaghi Foundation</a>
-</div>
+      <div class="brand">
+        <img src="./MMF Logo.jpg" alt="Maryam Mottaghi Foundation Logo" class="brand-logo" />
+        <span class="brand-mark">IN MEMORY. IN SERVICE. IN LIGHT.</span>
+        <a class="brand-name" href="#top">The Maryam Mottaghi Foundation</a>
+      </div>
       <nav class="nav-links" aria-label="Primary">
         <a href="#mission">Mission</a>
         <a href="#about">About Maryam</a>
+        <a href="#story">Her Story</a>
         <a href="#programs">Programs</a>
         <a href="#support">Donate</a>
         <a href="#contact">Contact</a>
@@ -461,7 +559,7 @@
           </p>
           <div class="actions">
             <a class="btn btn-primary" href="#support">Support the Foundation</a>
-            <a class="btn btn-secondary" href="#about">Read Maryam’s Story</a>
+            <a class="btn btn-secondary" href="#story">Read Maryam’s Story</a>
           </div>
         </div>
         <aside class="hero-card" aria-label="Foundation reflection">
@@ -530,6 +628,158 @@
               In honoring her, we hope to support those who need practical help, encouragement, and access to opportunity — especially in educational settings where one act of support can change the course of a life.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="story-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Her Story</span>
+            <h2>Curiosity, courage, sacrifice, and service.</h2>
+          </div>
+          <p class="lede">
+            Maryam’s story is one of brilliance and resilience: a self-taught artist and teacher, a student and professional, a mother who rebuilt life across countries, and a devoted Bahá’í whose home and heart remained open to those in need.
+          </p>
+        </div>
+
+        <div class="story-layout">
+          <article class="story-card">
+            <h3>Early life and gifts</h3>
+            <p>
+              Maryam Mottaghi was born in Yazd, Iran, to Sayed Yahya Mottaghi and Zahra Mottaghi. From a young age, she was known for her curiosity and her desire to learn, teach, assist, and contribute to the well-being of those around her.
+            </p>
+            <p>
+              She possessed a remarkable, self-taught talent for sewing and fashion. Without formal patterns or training, she could recreate designs by sight and often improve upon them. Guided by generosity, she shared her handmade creations with family, friends, and neighbors facing hardship.
+            </p>
+            <p>
+              After high school, Maryam established a government-recognized fashion institute where she served as administrator, instructor, and diploma provider for her students. She later pursued degrees in Meteorology and Business Management at the University of Tehran before working as a meteorologist at Mehrabad International Airport and expanding into human resources.
+            </p>
+
+            <div class="story-divider"></div>
+
+            <h3>Family, persecution, and courageous escape</h3>
+            <p>
+              Following her marriage to Jamshid Taefi, Maryam played a pivotal role in their family’s journey. She supported their livelihood while encouraging Jamshid to pursue higher education, helping make possible his degree in accounting and later government work.
+            </p>
+            <p>
+              In the aftermath of the revolution, Bahá’ís faced escalating persecution. When Maryam lost her job, she returned to sewing and did what she had always done: she found a way to provide. When her children’s future in Iran became increasingly uncertain, Maryam made the selfless decision to leave behind everything she knew in search of safety and opportunity for her family.
+            </p>
+            <p>
+              During the family’s perilous journey from Iran toward Pakistan, Maryam’s courage became the bedrock of their survival. When danger and uncertainty surrounded them, she remained resolute, protective, and determined to keep her family together.
+            </p>
+
+            <div class="family-grid">
+              <figure class="photo-card">
+                <img src="./maryam-jamshid.jpg" alt="Maryam and Jamshid" />
+                <figcaption>Maryam and Jamshid</figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="./maryam-arash.jpg" alt="Maryam with Arash" />
+                <figcaption>Maryam and Arash</figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="./maryam-azadeh.jpg" alt="Maryam with Azadeh" />
+                <figcaption>Maryam and Azadeh</figcaption>
+              </figure>
+            </div>
+
+            <div class="story-divider"></div>
+
+            <h3>Rebuilding in America</h3>
+            <p>
+              After 14 months of sacrifice in Pakistan, the family received sponsorship to immigrate to America in 1987. Within days of arriving, Maryam began working multiple jobs to support her family. She enrolled in night school to strengthen her communication skills and begin again in a new country.
+            </p>
+            <p>
+              While searching for a fashion institute in Pasadena, Maryam became intrigued by computer classes and enrolled at Pasadena City College. She later continued her studies at California State University, Los Angeles, earning a double degree in Computer Information Systems and Technology in 1998. She then moved into teaching, sharing the knowledge she had worked so hard to gain.
+            </p>
+            <p>
+              When her granddaughter was born and her son’s young family moved to California, Maryam made another selfless decision: she stepped away from her career and devoted herself to caregiving, providing stability, love, and support so the next generation could flourish.
+            </p>
+
+            <div class="family-grid">
+              <figure class="photo-card">
+                <img src="./maryam-pakistan.jpg" alt="Maryam and family in Pakistan" />
+                <figcaption>Pakistan and resilience</figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="./maryam-graduation.jpg" alt="Maryam at graduation" />
+                <figcaption>Education and achievement</figcaption>
+              </figure>
+              <figure class="photo-card">
+                <img src="./maryam-bahai-center.jpg" alt="Maryam at a Bahá’í center" />
+                <figcaption>Faith and service</figcaption>
+              </figure>
+            </div>
+
+            <div class="story-divider"></div>
+
+            <h3>Faith, devotion, and a life of prayer</h3>
+            <p>
+              Maryam remained steadfast in her devotion to the teachings of Bahá’u’lláh. She hosted Bahá’í deepening classes, served on the Local Spiritual Assembly, supported community gatherings, and opened her home for study circles, feasts, and fellowship.
+            </p>
+            <p>
+              Her compassionate spirit endeared her to family, friends, neighbors, coworkers, and community members. People facing hardship could rely on her love and prayers. She was known for selflessly reciting the “Is there any remover of difficulties?” prayer hundreds of times for those in need, offering each prayer with sincerity, compassion, and hope.
+            </p>
+            <p>
+              Maryam Mottaghi lived with grace, passion, courage, fierce determination, deep love, and abiding dedication to others. She gave of herself joyfully, with the love of God written in her heart.
+            </p>
+          </article>
+
+          <aside class="prayer-stack" aria-label="Bahá’í prayers and reflections">
+            <div class="prayer-card">
+              <img class="prayer-symbol" src="./bahai-symbol.jpg" alt="Bahá’í symbol" />
+              <blockquote>
+                “O my God, Thy Trust hath been returned unto Thee. It behooveth Thy grace and Thy bounty... to vouchsafe unto Thy newly welcomed one Thy gifts and Thy bestowals...”
+              </blockquote>
+              <cite>Bahá’u’lláh</cite>
+            </div>
+            <div class="prayer-card">
+              <blockquote>
+                “O Thou Kind Lord! This dearly cherished maidservant was attracted to Thee... Like unto a singing nightingale she chanted Thy sacred verses...”
+              </blockquote>
+              <cite>‘Abdu’l-Bahá</cite>
+            </div>
+            <div class="prayer-card">
+              <blockquote>
+                “O my God, O Forgiver of sins and Dispeller of afflictions... immerse her in the ocean of Thy forgiveness and pardon...”
+              </blockquote>
+              <cite>‘Abdu’l-Bahá</cite>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Memories</span>
+            <h2>Moments of warmth, beauty, and presence.</h2>
+          </div>
+          <p class="lede">
+            A small collection of images honoring Maryam’s joy, faith, family, and love of natural beauty. This gallery can continue to grow over time.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="photo-card">
+            <img src="./maryam-garden.jpg" alt="Maryam smiling in a garden" />
+            <figcaption>Maryam in the garden</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="./maryam-peacock.jpg" alt="Maryam smiling near a peacock" />
+            <figcaption>Joy in nature</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="./maryam-bench.jpg" alt="Maryam standing by a bench in a garden" />
+            <figcaption>A peaceful path</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="./maryam-orchid.jpg" alt="Maryam smiling beside orchids" />
+            <figcaption>Flowers and light</figcaption>
+          </figure>
         </div>
       </div>
     </section>
