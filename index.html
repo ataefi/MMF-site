@@ -14,6 +14,7 @@
       --line: #e9dfd1;
       --gold: #b98b2f;
       --gold-deep: #8c6823;
+      --rose: #d66f4d;
       --soft: #f5efe5;
       --shadow: 0 12px 35px rgba(63, 42, 16, 0.08);
       --max: 1120px;
@@ -63,8 +64,10 @@
     }
 
     .brand-logo {
-      width: 220px;
+      width: 190px;
       height: auto;
+      max-height: 190px;
+      object-fit: contain;
       margin-bottom: 10px;
       display: block;
       margin-left: auto;
@@ -330,7 +333,7 @@
 
     .story-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 330px;
+      grid-template-columns: minmax(0, 1fr) 340px;
       gap: 1.5rem;
       align-items: start;
     }
@@ -361,7 +364,7 @@
     .prayer-symbol {
       max-width: 78px;
       display: block;
-      margin: 0 0 0.7rem;
+      margin: 0 auto 0.7rem auto;
       opacity: 0.88;
       mix-blend-mode: multiply;
     }
@@ -392,25 +395,48 @@
 
     figure.photo-card {
       margin: 0;
-      background: var(--surface);
-      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #fdf8f2);
       border-radius: 22px;
       overflow: hidden;
-      box-shadow: var(--shadow);
+      position: relative;
+      box-shadow:
+        0 12px 30px rgba(214, 111, 77, 0.15),
+        0 0 0 1px rgba(214, 111, 77, 0.15);
+    }
+
+    figure.photo-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(214,111,77,0.7), rgba(185,139,47,0.65), rgba(255,200,150,0.55));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 2;
     }
 
     .photo-card img {
       width: 100%;
-      height: 220px;
+      height: 260px;
       object-fit: cover;
+      object-position: center center;
       display: block;
     }
+
+    .photo-focus-jamshid { object-position: center 28%; }
+    .photo-focus-grad { object-position: center 22%; }
+    .photo-focus-bahai { object-position: center 8%; height: 320px; }
+    .photo-focus-pakistan { object-position: center 62%; }
 
     .photo-card figcaption {
       padding: 0.8rem 0.95rem;
       color: var(--muted);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 0.88rem;
+      background: rgba(255,255,255,0.72);
     }
 
     .program-grid { grid-template-columns: repeat(3, 1fr); }
@@ -522,33 +548,12 @@
       .actions { flex-direction: column; }
       .btn { width: 100%; }
       .hero-card, .card, .story-card, .memorial-block, .prayer-card { padding: 1.25rem; }
-      .brand-logo { width: 170px; }
+      .brand-logo { width: 150px; max-height: 150px; }
       .portrait-inner { width: 230px; height: 230px; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .photo-card img { height: auto; }
+      .photo-card img { height: 260px; }
+      .photo-focus-bahai { height: 320px; }
     }
-/* Default image behavior */
-.photo-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center center;
-}
-
-/* Jamshid wedding — bring image DOWN */
-.photo-focus-jamshid {
-  object-position: center 75%;
-}
-
-/* Graduation — show full body */
-.photo-focus-grad {
-  object-position: center 25%;
-}
-
-/* Bahai building — show top */
-.photo-focus-bahai {
-  object-position: center 10%;
-}
   </style>
 </head>
 <body>
@@ -613,7 +618,7 @@
           </article>
           <article class="card">
             <h3>Mentorship and encouragement</h3>
-            <p>Create pathways for guidance, belonging, and practical support for those navigating personal and financial barriers.</p>
+            <p>Create pathways for guidance, belonging, and practical support for those navigating personal, educational, professional, or financial barriers.</p>
           </article>
           <article class="card">
             <h3>Service in Maryam’s spirit</h3>
@@ -668,33 +673,45 @@
 
         <div class="story-layout">
           <article class="story-card">
-            <h3>Early life and gifts</h3>
+            <h3>Maryam’s Celebration of Life</h3>
             <p>
-              Maryam Mottaghi was born in Yazd, Iran, to Sayed Yahya Mottaghi and Zahra Mottaghi. From a young age, she was known for her curiosity and her desire to learn, teach, assist, and contribute to the well-being of those around her.
+              Maryam Mottaghi entered the world on December 8, 1946, in Yazd, Iran, to Sayed Yahya Mottaghi and Zahra Mottaghi. Within her family constellation were two elder sisters, Bibi Rohbarb and Ashraf, along with a younger brother named Mohammad Agha. Although they all belonged to the Sayed lineage, Maryam, her parents, and her eldest sister embraced the Bahá’í faith.
             </p>
             <p>
-              She possessed a remarkable, self-taught talent for sewing and fashion. Without formal patterns or training, she could recreate designs by sight and often improve upon them. Guided by generosity, she shared her handmade creations with family, friends, and neighbors facing hardship.
+              From a young age, Maryam exhibited a natural curiosity and a profound desire to learn, teach, assist, and contribute to the well-being of those around her — be it friends, family, community members, or neighbors. Her thirst for knowledge was evident early on, as she eagerly delved into books, teaching herself until she had the opportunity to attend formal schooling.
             </p>
             <p>
-              After high school, Maryam established a government-recognized fashion institute where she served as administrator, instructor, and diploma provider for her students. She later pursued degrees in Meteorology and Business Management at the University of Tehran before working as a meteorologist at Mehrabad International Airport and expanding into human resources.
+              Maryam possessed a remarkable talent for sewing and fashion, entirely self-taught and hailed as a prodigy in her craft. Without the aid of patterns or formal training, her extraordinary skill transcended mere replication; she could effortlessly and flawlessly recreate designs simply by sight, often enhancing them to surpass the original, all without the need for measurements or guides.
+            </p>
+            <p>
+              Driven by her compassionate and generous spirit, Maryam bestowed her handmade creations upon family, friends, and even neighbors facing hardships. After completing high school, she established a government-recognized and accredited fashion institute. Taking on the roles of administrator, instructor, and diploma provider, she guided her students through rigorous training, ensuring their successful graduation. Upon completion, she diligently processed their diplomas, sending them to the state for official acknowledgment and endorsement.
+            </p>
+            <p>
+              Amidst her commitments, Maryam pursued dual degrees in Meteorology and Business Management at the University of Tehran. Following graduation, she made the decision to sell her esteemed fashion institute and transitioned into a role as a meteorologist at Mehrabad International Airport. In a testament to her versatility, she soon expanded her responsibilities to include work in the airport’s Human Resources department, seamlessly balancing both meteorology and HR duties. Throughout her career, Maryam was revered for her expertise, cherished for her warmth, and deeply respected by all who knew her.
             </p>
 
             <div class="story-divider"></div>
 
-            <h3>Family, persecution, and courageous escape</h3>
+            <h3>Marriage, family, and courage through persecution</h3>
             <p>
-              Following her marriage to Jamshid Taefi, Maryam played a pivotal role in their family’s journey. She supported their livelihood while encouraging Jamshid to pursue higher education, helping make possible his degree in accounting and later government work.
+              Following her marriage to Jamshid Taefi, Maryam played a pivotal role in their journey together. While providing unwavering support for their livelihood, she also encouraged Jamshid to pursue higher education. Thanks to her steadfast encouragement, Jamshid obtained a degree in accounting, eventually securing a position with the government in this field.
             </p>
             <p>
-              In the aftermath of the revolution, Bahá’ís faced escalating persecution. When Maryam lost her job, she returned to sewing and did what she had always done: she found a way to provide. When her children’s future in Iran became increasingly uncertain, Maryam made the selfless decision to leave behind everything she knew in search of safety and opportunity for her family.
+              In the tumultuous aftermath of the revolution, Bahá’ís faced escalating persecution, enduring loss of livelihoods, resources, and even lives. When Maryam found herself among those who lost their jobs, her primary concern became supporting her family. Returning to her roots in sewing, she embarked on a journey of resilience, single-mindedly providing for her loved ones. Additionally, Maryam played a pivotal role in securing employment for Jamshid within her family’s network, demonstrating her unwavering determination and resourcefulness as they navigated through adversity together.
             </p>
             <p>
-              During the family’s perilous journey from Iran toward Pakistan, Maryam’s courage became the bedrock of their survival. When danger and uncertainty surrounded them, she remained resolute, protective, and determined to keep her family together.
+              Maryam is the proud mother of two children, Arash and Azadeh. Before the revolution, Arash was already attending school. However, when it was time for Azadeh to enroll in kindergarten after the revolution, Maryam faced formidable challenges. Despite her tireless efforts to secure Azadeh’s enrollment, every application form posed the same obstacle: it required disclosure of the child’s religion. Upon revealing their Bahá’í faith, they were unjustly denied admission and instructed to leave, leaving Maryam grappling with discrimination and the denial of her daughter’s right to education.
+            </p>
+            <p>
+              Recognizing the bleak prospects for her children’s future in Iran, Maryam made a bold and selfless choice: to forsake everything and everyone she knew, all in pursuit of a better life for her young family. She took decisive action, liquidating her possessions and parting with cherished jewelry to finance their escape from Iran, determined to provide her children with the opportunity for a brighter future elsewhere.
+            </p>
+            <p>
+              Maryam’s unwavering courage and resilience were the bedrock upon which her family relied. Throughout their lives, her indomitable spirit served as a guiding light, particularly during their perilous escape. Despite the daunting and intense nature of their journey, Maryam remained a beacon of strength, comforting her loved ones and reframing their ordeal as an adventure rather than a dire necessity for survival. Her fearless demeanor and unwavering optimism helped carry them through the darkest of times.
             </p>
 
             <div class="family-grid">
               <figure class="photo-card">
-                <img src="./maryam-jamshid.jpg" class="photo-focus-jamshid" />
+                <img src="./maryam-jamshid.jpg" class="photo-focus-jamshid" alt="Maryam and Jamshid" />
                 <figcaption>Maryam and Jamshid</figcaption>
               </figure>
               <figure class="photo-card">
@@ -709,43 +726,65 @@
 
             <div class="story-divider"></div>
 
-            <h3>Rebuilding in America</h3>
+            <h3>Pakistan, sacrifice, and a new beginning</h3>
             <p>
-              After 14 months of sacrifice in Pakistan, the family received sponsorship to immigrate to America in 1987. Within days of arriving, Maryam began working multiple jobs to support her family. She enrolled in night school to strengthen her communication skills and begin again in a new country.
+              Over the course of four days and five nights, Maryam and her family trailed behind smugglers on their arduous journey from Iran to the border of Pakistan. Amidst the challenges of the trip, when the smugglers attempted to extort more money, Maryam demonstrated remarkable courage. Fearlessly confronting the smugglers, she refused to yield, insisting they return to retrieve her husband and daughter, who had been left behind during the previous rest period. Her resolute determination ensured the safety and unity of her family amidst the perilous passage.
             </p>
             <p>
-              While searching for a fashion institute in Pasadena, Maryam became intrigued by computer classes and enrolled at Pasadena City College. She later continued her studies at California State University, Los Angeles, earning a double degree in Computer Information Systems and Technology in 1998. She then moved into teaching, sharing the knowledge she had worked so hard to gain.
+              Upon their arrival in Pakistan, Maryam wasted no time in taking action. With the funds she had managed to save through her sacrifices, she secured a home for her family and immediately began sewing to provide for their basic needs. Despite the demands of earning a living, Maryam also took on the responsibility of homeschooling her son and daughter. In addition to these duties, she remained actively engaged in Bahá’í activities at the Lahore Bahá’í Center, offering her assistance and support to fellow Bahá’ís, especially the young ones in need. Maryam’s unwavering dedication to her family and community showcased her remarkable strength and resilience.
             </p>
             <p>
-              When her granddaughter was born and her son’s young family moved to California, Maryam made another selfless decision: she stepped away from her career and devoted herself to caregiving, providing stability, love, and support so the next generation could flourish.
+              Maryam’s nurturing instinct extended beyond her immediate family. She frequently assumed a maternal role for young adults in her community, offering care and support, especially during times of illness or hardship. Without hesitation, she opened her home to those in need, providing comfort and assistance to individuals who were unable to care for themselves after serious illnesses. Maryam’s unwavering devotion to serving others exemplified the essence of true Bahá’í faith, reflecting her boundless love and selflessness as a servant of the divine.
+            </p>
+            <p>
+              In 1987, after 14 months of relentless sacrifice, their perseverance paid off when they finally received sponsorship to immigrate to America. Within days of their arrival, Maryam wasted no time in securing multiple jobs to provide for her family. Not content to settle, she also enrolled herself in night school, driven to enhance her communication skills and kickstart her career in her new home, all while continuing to shoulder the sole responsibility of supporting her family. Her unwavering determination and work ethic were evident as she embarked on this new chapter of her life in America.
             </p>
 
             <div class="family-grid">
               <figure class="photo-card">
-                <img src="./maryam-pakistan.jpg" alt="Maryam and family in Pakistan" />
-                <figcaption>Pakistan and resilience</figcaption>
+                <img src="./maryam-pakistan.jpg" class="photo-focus-pakistan" alt="Maryam and family in Pakistan" />
+                <figcaption>She carried her family forward with courage and unwavering love.</figcaption>
               </figure>
               <figure class="photo-card">
-                <img src="./maryam-graduation.jpg" class="photo-focus-grad" />
+                <img src="./maryam-graduation.jpg" class="photo-focus-grad" alt="Maryam at graduation" />
                 <figcaption>Education and achievement</figcaption>
               </figure>
               <figure class="photo-card">
-                <img src="./maryam-bahai-center.jpg" class="photo-focus-bahai" />
+                <img src="./maryam-bahai-center.jpg" class="photo-focus-bahai" alt="Maryam at a Bahá’í holy place" />
                 <figcaption>Faith and service</figcaption>
               </figure>
             </div>
 
             <div class="story-divider"></div>
 
-            <h3>Faith, devotion, and a life of prayer</h3>
+            <h3>Education, technology, teaching, and family devotion</h3>
             <p>
-              Maryam remained steadfast in her devotion to the teachings of Bahá’u’lláh. She hosted Bahá’í deepening classes, served on the Local Spiritual Assembly, supported community gatherings, and opened her home for study circles, feasts, and fellowship.
+              During her quest to find a fashion institute in Pasadena, Maryam found herself intrigued by signs advertising computer classes, she decided to explore further. Before she knew it, she had enrolled herself in Pasadena City College. Instead of opting for the known and familiar, Maryam chose to challenge herself and embark on a completely new career path. While enrolled in computer science courses, she simultaneously supported both herself and her family by working in the college’s Human Resources department. Her willingness to embrace change and her dedication to self-improvement were evident as she navigated this new chapter in her life.
             </p>
             <p>
-              Her compassionate spirit endeared her to family, friends, neighbors, coworkers, and community members. People facing hardship could rely on her love and prayers. She was known for selflessly reciting the “Is there any remover of difficulties?” prayer hundreds of times for those in need, offering each prayer with sincerity, compassion, and hope.
+              After a period of time, Maryam transferred to California State University, Los Angeles, where she continued her studies in both Computer Information Systems and Technology. In 1998, she achieved a significant milestone by graduating from California State University, Los Angeles, with a double degree. Shortly thereafter, she embarked on a new chapter in her career by transitioning into a teaching role, sharing her expertise in the very courses she had once taken herself.
             </p>
             <p>
-              Maryam Mottaghi lived with grace, passion, courage, fierce determination, deep love, and abiding dedication to others. She gave of herself joyfully, with the love of God written in her heart.
+              Maryam dedicated herself to academia as a professor at the university until a significant event changed her course. Upon the birth of her granddaughter and her son’s relocation to California, she made the selfless decision to prioritize family. With her son’s young family moving in with her, Maryam wholeheartedly devoted herself to their care. Sacrificing her career, she became the sole provider and caregiver for her granddaughter, ensuring her well-being and nurturing her development. Maryam’s tireless efforts bore fruit as her granddaughter flourished, achieving accolades in high school and later in college, a testament to Maryam’s unwavering love and support.
+            </p>
+
+            <div class="story-divider"></div>
+
+            <h3>Faith, devotion, prayer, and eternal love</h3>
+            <p>
+              Amidst her busy and fulfilling life, Maryam remained steadfast in her devotion to the teachings of Bahá’u’lláh. Without falter, she hosted Bahá’í deepening classes in her home every week, while also serving on the Local Spiritual Assembly and offering support to other communities and firesides. As the years progressed and Ruhi classes were introduced, Maryam enthusiastically opened her home to host each book study session and every assembly gathering and feast. Her commitment to her faith never wavered, and she remained a proud and active Bahá’í until the very end of her life.
+            </p>
+            <p>
+              Maryam’s compassionate spirit endeared her to many, and she was a source of love and support for all who crossed her path. Whether it was family, friends, neighbors, or coworkers facing hardships, they could always rely on her unwavering love and prayers. Maryam selflessly recited 500 “Is there any remover of difficulty?” prayer for each person in need, fervently praying for their healing, success, or thriving, depending on their specific needs. Her generosity of spirit and boundless love infused each prayer, offered willingly and with a heart brimming with compassion and vitality.
+            </p>
+            <p>
+              Just as Maryam reached a point in her life where she could finally take a well-deserved rest and focus on her own well-being, her health began to decline. The accumulated stresses and sacrifices of a lifetime caught up with her, taking a toll on her physical well-being.
+            </p>
+            <p>
+              As Maryam’s health declined, she received the devastating diagnosis of pancreatic cancer, which had already spread to her liver, lungs, intestines, and kidneys. Despite her courageous and unwavering fight, she eventually succumbed to the illness, departing for the Abha Kingdom on May 15, 2024. Her departure left countless hearts shattered, but she now rests in the embrace of the Almighty, surrounded by His grace and at peace.
+            </p>
+            <p>
+              Maryam Mottaghi lived her life with grace, passion, courage, fierce determination, deep love, and abiding dedication to others, and gave of herself joyfully, with the love of God written in her heart. May God perpetually safeguard this angel, granting her eternal happiness, health, and peace in the celestial paradise she now calls home.
             </p>
           </article>
 
@@ -753,19 +792,19 @@
             <div class="prayer-card">
               <img class="prayer-symbol" src="./bahai-symbol.jpg" alt="Bahá’í symbol" />
               <blockquote>
-                “O my God, Thy Trust hath been returned unto Thee. It behooveth Thy grace and Thy bounty... to vouchsafe unto Thy newly welcomed one Thy gifts and Thy bestowals...”
+                “O my God, Thy Trust hath been returned unto Thee. It behooveth Thy grace and Thy bounty that have compassed Thy dominions on earth and in heaven, to vouchsafe unto Thy newly welcomed one Thy gifts and Thy bestowals, and the fruits of the tree of Thy grace! Powerful art Thou to do as Thou willest, there is none other God but Thee, the Gracious, the Most Bountiful, the Compassionate, the Bestower, the Pardoner, the Precious, the All-Knowing.”
               </blockquote>
               <cite>Bahá’u’lláh</cite>
             </div>
             <div class="prayer-card">
               <blockquote>
-                “O Thou Kind Lord! This dearly cherished maidservant was attracted to Thee... Like unto a singing nightingale she chanted Thy sacred verses...”
+                “O Thou Kind Lord! This dearly cherished maidservant was attracted to Thee, and through reflection and discernment longed to attain Thy presence and enter Thy realms. With tearful eyes she fixed her gaze on the Kingdom of Mysteries. Many a night she spent in deep communion with Thee, and many a day she lived in intimate remembrance of Thee.”
               </blockquote>
               <cite>‘Abdu’l-Bahá</cite>
             </div>
             <div class="prayer-card">
               <blockquote>
-                “O my God, O Forgiver of sins and Dispeller of afflictions... immerse her in the ocean of Thy forgiveness and pardon...”
+                “O my God, O Forgiver of sins and Dispeller of afflictions! O Thou Who art the Pardoner, the Merciful! I raise my suppliant hands to Thee, tearfully beseeching the court of Thy divine Essence to forgive, through Thy grace and clemency, Thy handmaiden who hath ascended unto the seat of truth.”
               </blockquote>
               <cite>‘Abdu’l-Bahá</cite>
             </div>
@@ -811,28 +850,84 @@
         <div class="section-head">
           <div>
             <span class="section-label">Programs</span>
-            <h2>Areas of support the foundation seeks to grow over time.</h2>
+            <h2>Programs designed to transform remembrance into opportunity.</h2>
           </div>
           <p class="lede">
-            The Maryam Mottaghi Foundation is in its early stages. As it grows, it aims to build meaningful, carefully stewarded programs that reflect both urgent need and enduring impact.
+            The Maryam Mottaghi Foundation is in its early stages. As it grows, it seeks to build meaningful, carefully stewarded programs led by highly regarded, trained, skilled, experienced, established, and recognized professionals in their fields and communities.
           </p>
         </div>
 
         <div class="program-grid">
           <article class="card program-card">
             <div class="num">1</div>
-            <h3>Scholarships</h3>
-            <p>Financial support for students and learners whose educational path has been hindered by hardship or lack of access.</p>
+            <h3>Fashion Design & Creation</h3>
+            <p>Inspired by Maryam’s extraordinary gift for fashion, this program will teach students the full creative journey from idea to finished garment: design concept, sketching, drafting, pattern creation, cutting, sewing, refinement, and presentation. The goal is to give learners not only practical skill, but the confidence to create beauty with their own hands.</p>
           </article>
+
           <article class="card program-card">
             <div class="num">2</div>
-            <h3>Learning resources</h3>
-            <p>Books, technology, educational materials, and practical assistance that make continued study possible.</p>
+            <h3>Technology & Computer Information Systems</h3>
+            <p>Maryam rebuilt her career through technology, and this program honors that courage by helping others enter the modern workforce. Participants may receive guidance in computers, coding, programming, cybersecurity, automation, engineering pathways, and practical digital skills needed for meaningful careers in technology.</p>
           </article>
+
           <article class="card program-card">
             <div class="num">3</div>
-            <h3>Mentorship and outreach</h3>
-            <p>Programs shaped around encouragement, guidance, and compassionate support for those facing difficult circumstances.</p>
+            <h3>College Admissions & Life Advancement</h3>
+            <p>No student or adult learner should have to navigate opportunity alone. This program will support junior high students preparing for high school, high school students applying to college, and adults returning to education or seeking advancement. Through mentorship and resource navigation, the foundation seeks to make the path forward less frightening and more possible.</p>
+          </article>
+
+          <article class="card program-card">
+            <div class="num">4</div>
+            <h3>Culinary Arts & Nourishment</h3>
+            <p>Maryam’s cooking was an expression of love, generosity, patience, and welcome. This program will offer professional cooking lessons taught by skilled chefs, helping participants learn technique, discipline, creativity, and the deeper joy of feeding others with care.</p>
+          </article>
+
+          <article class="card program-card">
+            <div class="num">5</div>
+            <h3>Writing, Short Stories & Publishing</h3>
+            <p>Maryam loved books, storytelling, and expression. This program will guide individuals in shaping memories, imagination, and lived experience into written work — from short stories to personal narratives — with support in drafting, editing, developing voice, and exploring pathways to publication.</p>
+          </article>
+
+          <article class="card program-card">
+            <div class="num">6</div>
+            <h3>Journalism & Media Production</h3>
+            <p>This program will introduce participants to the fundamentals of journalism: identifying meaningful stories, researching responsibly, interviewing with integrity, writing clearly, and presenting stories across media. It may also include production training in cameras, studio workflows, control rooms, switchers, playback systems, and the technical tools used to bring stories to life.</p>
+          </article>
+
+          <article class="card program-card">
+            <div class="num">7</div>
+            <h3>Filmmaking & Creative Production</h3>
+            <p>From idea to audience, this program will teach the art and discipline of filmmaking: concept development, writing, storyboarding, scripting, filming, editing, producing, and understanding how completed work can reach viewers. It honors Maryam’s lifelong encouragement of creativity and the courage to tell meaningful stories.</p>
+          </article>
+
+          <article class="card program-card">
+            <div class="num">8</div>
+            <h3>Literacy & Foundational Learning</h3>
+            <p>Literacy is dignity, access, and freedom. This program will support children and adults who need help learning to read, write, and communicate with confidence, while fostering the love of books, learning, and storytelling that Maryam carried throughout her life.</p>
+          </article>
+
+          <article class="card program-card">
+            <div class="num">9</div>
+            <h3>Character & Spiritual Education</h3>
+            <p>Inspired by Maryam’s example of faith without force, this program will nurture virtues that help build a better society: kindness, truthfulness, compassion, service, responsibility, justice, and love. Rooted in the belief that moral education begins early, it seeks to help children become thoughtful, caring human beings who uplift the world around them.</p>
+          </article>
+
+          <article class="card program-card">
+            <div class="num">10</div>
+            <h3>Legal Guidance & Resource Navigation</h3>
+            <p>For those facing hardship, legal systems can feel impossible to understand alone. This program will seek to connect individuals with appropriate guidance, resources, and trusted professionals so that people in need are not left unsupported when the stakes are high and the path is unclear.</p>
+          </article>
+
+          <article class="card program-card">
+            <div class="num">11</div>
+            <h3>Mental Health Counseling & Emotional Support</h3>
+            <p>Stable mental health is a foundation for learning, healing, service, and a meaningful life. This program will seek to connect individuals with compassionate, qualified mental health professionals and supportive resources so they can move forward with greater strength, clarity, and hope.</p>
+          </article>
+
+          <article class="card program-card">
+            <div class="num">12</div>
+            <h3>Community Support & Emergency Encouragement</h3>
+            <p>Maryam’s life showed that sometimes one act of care can change the course of a person’s day, year, or life. As the foundation grows, it hopes to provide practical, compassionate support to individuals and families experiencing difficulty, always guided by dignity, discretion, and love.</p>
           </article>
         </div>
       </div>
@@ -852,7 +947,7 @@
             Donation information can be displayed here. While the foundation’s IRS recognition process is underway, this section may be updated as administrative details are finalized.
           </div>
           <div class="actions">
-            <a class="btn btn-primary" href="mailto:info@maryammottaghifoundation.org?subject=Support%20the%20Foundation">Inquire About Giving</a>
+            <a class="btn btn-primary" href="mailto:themaryammottaghifoundation@gmail.com?subject=Support%20the%20Foundation">Inquire About Giving</a>
             <a class="btn btn-secondary" href="#contact">Contact the Foundation</a>
           </div>
         </article>
@@ -862,7 +957,7 @@
           <ul>
             <li>Make a contribution in honor of Maryam’s life and legacy.</li>
             <li>Share the foundation with others who believe in education, dignity, and compassionate service.</li>
-            <li>Reach out to explore volunteer, partnership, or advisory support.</li>
+            <li>Reach out to explore volunteer, partnership, sponsorship, or advisory support.</li>
           </ul>
           <p>
             The foundation intends to steward all support with care, transparency, and fidelity to its mission.
@@ -899,7 +994,7 @@
             <ul class="contact-list">
               <li><strong>Name:</strong> The Maryam Mottaghi Foundation</li>
               <li><strong>Website:</strong> maryammottaghifoundation.org</li>
-              <li><strong>Email:</strong> info@maryammottaghifoundation.org</li>
+              <li><strong>Email:</strong> <a href="mailto:themaryammottaghifoundation@gmail.com">themaryammottaghifoundation@gmail.com</a></li>
             </ul>
           </article>
           <article class="card">
