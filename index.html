@@ -1,1022 +1,574 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Maryam Mottaghi Foundation</title>
-  <meta name="description" content="The Maryam Mottaghi Foundation honors the life and spirit of Maryam Mottaghi through educational support, compassion, faith, and service." />
-  <style>
-    :root {
-      --bg: #fcfaf6;
-      --surface: #ffffff;
-      --text: #2d251d;
-      --muted: #6b5e52;
-      --line: #e9dfd1;
-      --gold: #b98b2f;
-      --gold-deep: #8c6823;
-      --rose: #d66f4d;
-      --soft: #f5efe5;
-      --shadow: 0 12px 35px rgba(63, 42, 16, 0.08);
-      --max: 1120px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; }
-
-    .wrap {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-      background: rgba(252, 250, 246, 0.93);
-      border-bottom: 1px solid rgba(185, 139, 47, 0.12);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      text-align: center;
-    }
-
-    .brand-logo {
-      width: 190px;
-      height: auto;
-      max-height: 190px;
-      object-fit: contain;
-      margin-bottom: 10px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      mix-blend-mode: multiply;
-    }
-
-    .brand-mark {
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold-deep);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .brand-name {
-      font-size: 1.18rem;
-      font-weight: 700;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.1rem;
-      align-items: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.95rem;
-      color: var(--muted);
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a:hover { color: var(--gold-deep); }
-
-    .hero {
-      padding: 6rem 0 4.5rem;
-      background:
-        radial-gradient(circle at top right, rgba(185,139,47,0.10), transparent 35%),
-        linear-gradient(180deg, #fffdf9 0%, var(--bg) 100%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 0.45rem 0.8rem;
-      border: 1px solid rgba(185, 139, 47, 0.28);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.7);
-      color: var(--gold-deep);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    h1, h2, h3 { line-height: 1.15; margin: 0 0 1rem; }
-
-    h1 {
-      font-size: clamp(2.6rem, 5vw, 4.75rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      max-width: 12ch;
-    }
-
-    .hero p {
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 60ch;
-      margin: 0 0 1.5rem;
-    }
-
-    .actions {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.95rem 1.3rem;
-      border-radius: 999px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
-      color: white;
-    }
-
-    .btn-secondary {
-      border-color: rgba(185, 139, 47, 0.35);
-      background: rgba(255,255,255,0.85);
-      color: var(--text);
-    }
-
-    .hero-card,
-    .card,
-    .story-card,
-    .prayer-card,
-    .memorial-block {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(185,139,47,0.16), transparent 34%);
-      pointer-events: none;
-    }
-
-    .quote-mark {
-      font-size: 4rem;
-      color: rgba(185,139,47,0.22);
-      line-height: 1;
-    }
-
-    .quote {
-      font-size: 1.1rem;
-      margin: -1rem 0 1rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .quote-source {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--muted);
-      font-size: 0.92rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    section {
-      padding: 4.8rem 0;
-      border-top: 1px solid rgba(185, 139, 47, 0.10);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 2rem;
-      align-items: start;
-      margin-bottom: 2rem;
-    }
-
-    .section-label {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold-deep);
-      margin-bottom: 0.8rem;
-      display: inline-block;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      margin-bottom: 0.8rem;
-    }
-
-    .lede {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 68ch;
-    }
-
-    .mission-grid,
-    .program-grid,
-    .support-grid,
-    .gallery-grid,
-    .family-grid {
-      display: grid;
-      gap: 1.25rem;
-    }
-
-    .mission-grid {
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 1rem;
-    }
-
-    .card { padding: 1.5rem; }
-    .card h3 { font-size: 1.2rem; margin-bottom: 0.65rem; }
-    .card p, .card li { color: var(--muted); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 1.5rem;
-    }
-
-    .portrait-card {
-      min-height: 100%;
-      background: linear-gradient(180deg, #fff, #f6f0e6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .portrait-inner {
-      border: 1px solid rgba(185, 139, 47, 0.25);
-      border-radius: 999px;
-      width: 240px;
-      height: 240px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle, rgba(185,139,47,0.18), rgba(255,255,255,0.55));
-      box-shadow: inset 0 0 0 12px rgba(255,255,255,0.55);
-      padding: 1rem;
-      font-size: 1.1rem;
-      color: var(--gold-deep);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .portrait-photo-wrap {
-      padding: 0;
-      box-shadow: 0 10px 25px rgba(63, 42, 16, 0.10), inset 0 0 0 8px rgba(255,255,255,0.65);
-      background: #f6f1e8;
-    }
-
-    .portrait-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 15%;
-      display: block;
-      border-radius: 999px;
-    }
-
-    .story-section {
-      background: linear-gradient(180deg, rgba(185,139,47,0.08), rgba(255,255,255,0));
-    }
-
-    .story-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
-      gap: 1.5rem;
-      align-items: start;
-    }
-
-    .story-card { padding: 2rem; }
-    .story-card p { color: var(--muted); margin: 0 0 1rem; }
-    .story-card p:last-child { margin-bottom: 0; }
-
-    .story-divider {
-      height: 1px;
-      background: var(--line);
-      margin: 1.6rem 0;
-    }
-
-    .prayer-stack {
-      display: grid;
-      gap: 1rem;
-      position: sticky;
-      top: 130px;
-    }
-
-    .prayer-card {
-      padding: 1.25rem;
-      background: #fffdf9;
-      border-left: 4px solid rgba(185,139,47,0.55);
-    }
-
-    .prayer-symbol {
-      max-width: 78px;
-      display: block;
-      margin: 0 auto 0.7rem auto;
-      opacity: 0.88;
-      mix-blend-mode: multiply;
-    }
-
-    .prayer-card blockquote {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.6;
-    }
-
-    .prayer-card cite {
-      display: block;
-      margin-top: 0.8rem;
-      color: var(--gold-deep);
-      font-style: normal;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .family-grid {
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 1.25rem;
-    }
-
-    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
-
-    figure.photo-card {
-      margin: 0;
-      background: linear-gradient(180deg, #fff, #fdf8f2);
-      border-radius: 22px;
-      overflow: hidden;
-      position: relative;
-      box-shadow:
-        0 12px 30px rgba(214, 111, 77, 0.15),
-        0 0 0 1px rgba(214, 111, 77, 0.15);
-    }
-
-    figure.photo-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 22px;
-      padding: 2px;
-      background: linear-gradient(135deg, rgba(214,111,77,0.7), rgba(185,139,47,0.65), rgba(255,200,150,0.55));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
-    }
-
-    .photo-focus-jamshid { object-position: center 28%; }
-    .photo-focus-grad { object-position: center 22%; }
-    .photo-focus-bahai { object-position: center 8%; height: 320px; }
-    .photo-focus-pakistan { object-position: center 62%; }
-
-    .photo-card figcaption {
-      padding: 0.8rem 0.95rem;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.88rem;
-      background: rgba(255,255,255,0.72);
-    }
-
-    .program-grid { grid-template-columns: repeat(3, 1fr); }
-
-    .program-card .num {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--gold-deep);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-    }
-
-    .support-grid { grid-template-columns: 1.1fr 0.9fr; }
-
-    .donate-box {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      justify-content: center;
-      min-height: 100%;
-    }
-
-    .status-note {
-      padding: 0.9rem 1rem;
-      border-radius: 16px;
-      background: rgba(185, 139, 47, 0.10);
-      border: 1px solid rgba(185, 139, 47, 0.18);
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.94rem;
-    }
-
-    .memorial {
-      background: linear-gradient(180deg, rgba(185,139,47,0.08), rgba(255,255,255,0));
-    }
-
-    .memorial-block { padding: 2rem; }
-    .memorial-block p:last-child { margin-bottom: 0; }
-
-    .contact {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-    }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.8rem;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--muted);
-    }
-
-    footer {
-      padding: 2rem 0 3rem;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.94rem;
-    }
-
-    .footer-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      border-top: 1px solid var(--line);
-      padding-top: 1.2rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 1050px) {
-      .story-layout { grid-template-columns: 1fr; }
-      .prayer-stack { position: static; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 960px) {
-      .hero-grid,
-      .section-head,
-      .about-grid,
-      .support-grid,
-      .contact,
-      .mission-grid,
-      .program-grid,
-      .family-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero { padding-top: 4.5rem; }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .brand { text-align: left; }
-      .brand-logo { margin-left: 0; }
-      .nav-links { justify-content: flex-start; }
-    }
-
-    @media (max-width: 560px) {
-      .actions { flex-direction: column; }
-      .btn { width: 100%; }
-      .hero-card, .card, .story-card, .memorial-block, .prayer-card { padding: 1.25rem; }
-      .brand-logo { width: 150px; max-height: 150px; }
-      .portrait-inner { width: 230px; height: 230px; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .photo-card img { height: 260px; }
-      .photo-focus-bahai { height: 320px; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Maryam Mottaghi Foundation</title>
+
+<style>
+:root{
+  --ivory:#F9F6EF;
+  --cream:#FFF9F2;
+  --parchment:#F4EBDD;
+  --linen:#FCFAF6;
+  --orange:#E67E3A;
+  --saffron:#DFA343;
+  --sunrise:#F2C15E;
+  --apricot:#F5B584;
+  --rose:#F57C5D;
+  --peach:#FFD8BD;
+  --olive:#8A8C63;
+  --sage:#B6C1A1;
+  --ink:#2F2621;
+  --soft:#76675F;
+  --border:rgba(223,163,67,.25);
+  --shadow:0 24px 70px rgba(82,45,20,.12);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,var(--cream),var(--ivory) 45%,var(--parchment));
+}
+
+header{
+  min-height:96px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 6vw;
+  background:rgba(255,249,242,.92);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(14px);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  text-decoration:none;
+  color:var(--ink);
+}
+
+.brand img{
+  width:74px;
+  height:74px;
+  object-fit:contain;
+}
+
+.brand-text{
+  line-height:1.15;
+}
+
+.brand-text strong{
+  display:block;
+  color:#B87922;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:17px;
+  font-weight:bold;
+}
+
+.brand-text span{
+  color:var(--soft);
+  font-size:13px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+}
+
+nav a{
+  color:var(--ink);
+  text-decoration:none;
+  margin-left:22px;
+  font-size:15px;
+  font-weight:bold;
+}
+
+nav a.donate-nav{
+  background:linear-gradient(135deg,var(--orange),var(--saffron));
+  color:white;
+  padding:13px 22px;
+  border-radius:999px;
+  box-shadow:0 12px 28px rgba(230,126,58,.24);
+}
+
+section{padding:90px 6vw}
+
+.content{max-width:1180px;margin:auto}
+
+.light-line{
+  width:120px;
+  height:2px;
+  margin:24px 0 34px;
+  background:linear-gradient(90deg,transparent,var(--sunrise),var(--orange),var(--sunrise),transparent);
+}
+
+.eyebrow{
+  color:#A87827;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:clamp(56px,8vw,108px);
+  line-height:.98;
+  font-weight:400;
+  color:var(--orange);
+  margin:0 0 26px;
+}
+
+h2{
+  font-size:clamp(38px,5vw,68px);
+  line-height:1.05;
+  font-weight:400;
+  color:var(--orange);
+  margin:0;
+}
+
+h3{
+  font-size:28px;
+  color:#B87922;
+  font-weight:400;
+  margin:0 0 14px;
+}
+
+p,li{
+  font-size:19px;
+  line-height:1.8;
+  color:var(--soft);
+}
+
+.hero{
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,rgba(255,249,242,.96) 0%,rgba(255,249,242,.86) 42%,rgba(255,249,242,.48) 72%,rgba(255,249,242,.25) 100%),
+    url("mmf-hero-light.png");
+  background-size:cover;
+  background-position:center;
+  border-bottom:1px solid var(--border);
+}
+
+.hero-inner{
+  max-width:760px;
+}
+
+.hero p{
+  font-size:24px;
+  color:#6D5A50;
+  max-width:700px;
+}
+
+.buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:34px;
+}
+
+.button{
+  display:inline-block;
+  text-decoration:none;
+  border-radius:999px;
+  padding:16px 28px;
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+.primary{
+  background:linear-gradient(135deg,var(--orange),var(--saffron));
+  color:white;
+  box-shadow:0 14px 34px rgba(230,126,58,.26);
+}
+
+.secondary{
+  border:1px solid var(--border);
+  color:#A36B23;
+  background:rgba(255,255,255,.58);
+}
+
+.quote-panel{
+  background:rgba(255,255,255,.72);
+  border:1px solid var(--border);
+  border-radius:34px;
+  padding:58px;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+
+.quote-panel p{
+  font-size:30px;
+  line-height:1.55;
+  color:#5B463A;
+  margin:0;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.portrait-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:34px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.portrait-card img{
+  width:100%;
+  height:560px;
+  object-fit:cover;
+  border-radius:24px;
+  display:block;
+}
+
+.panel{
+  background:rgba(255,255,255,.68);
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:36px;
+  box-shadow:0 18px 50px rgba(82,45,20,.08);
+}
+
+.program-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+  margin-top:46px;
+}
+
+.program-card{
+  overflow:hidden;
+  border-radius:28px;
+  border:1px solid var(--border);
+  background:white;
+  box-shadow:0 20px 60px rgba(82,45,20,.09);
+}
+
+.program-card img{
+  width:100%;
+  height:235px;
+  object-fit:cover;
+  display:block;
+}
+
+.program-body{
+  padding:28px;
+}
+
+.program-body p{
+  font-size:17px;
+  margin-bottom:0;
+}
+
+.values{
+  background:
+    radial-gradient(circle at 20% 10%,rgba(245,181,132,.28),transparent 32%),
+    linear-gradient(135deg,#FFF9F2,#F4EBDD);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.value-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:18px;
+  margin-top:42px;
+}
+
+.value{
+  background:rgba(255,255,255,.66);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:26px;
+  color:#A36B23;
+  font-size:22px;
+  box-shadow:0 16px 40px rgba(82,45,20,.07);
+}
+
+.donate-band{
+  background:linear-gradient(135deg,#FFF4E8,#F7D5B8);
+}
+
+.donate-box{
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:40px;
+  align-items:center;
+  background:rgba(255,255,255,.72);
+  border:1px solid var(--border);
+  border-radius:36px;
+  padding:54px;
+  box-shadow:var(--shadow);
+}
+
+.giving-list{
+  display:grid;
+  gap:14px;
+}
+
+.giving-list div{
+  background:rgba(255,249,242,.72);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+  color:var(--soft);
+  font-size:17px;
+}
+
+footer{
+  text-align:center;
+  padding:58px 6vw;
+  color:#A87827;
+  background:var(--cream);
+  border-top:1px solid var(--border);
+  letter-spacing:2px;
+}
+
+@media(max-width:980px){
+  header{display:block;text-align:center}
+  .brand{justify-content:center}
+  nav{margin-top:20px}
+  nav a{display:inline-block;margin:8px 10px}
+  .split,.donate-box{grid-template-columns:1fr}
+  .portrait-card img{height:auto}
+  .quote-panel{padding:36px}
+}
+</style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="wrap nav">
-      <div class="brand">
-        <img src="./MMF Logo.jpg" alt="Maryam Mottaghi Foundation Logo" class="brand-logo" />
-        <span class="brand-mark">IN MEMORY. IN SERVICE. IN LIGHT.</span>
-        <a class="brand-name" href="#top">The Maryam Mottaghi Foundation</a>
-      </div>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#mission">Mission</a>
-        <a href="#about">About Maryam</a>
-        <a href="#story">Her Story</a>
-        <a href="#programs">Programs</a>
-        <a href="#support">Donate</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+<header>
+  <a class="brand" href="index.html">
+    <img src="mmf-logo.png" alt="The Maryam Mottaghi Foundation logo">
+    <div class="brand-text">
+      <strong>The Maryam Mottaghi Foundation</strong>
+      <span>In memory. In service. In light.</span>
     </div>
-  </header>
+  </a>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">A legacy of love, sacrifice, and education</span>
-          <h1>Honoring Maryam Mottaghi through service and opportunity.</h1>
-          <p>
-            The Maryam Mottaghi Foundation was established to carry forward the spirit of a woman whose life was marked by selflessness, faith, resilience, and devotion to others. Through educational support, compassionate outreach, and programs rooted in dignity and hope, the foundation seeks to uplift lives in her honor.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#support">Support the Foundation</a>
-            <a class="btn btn-secondary" href="#story">Read Maryam’s Story</a>
-          </div>
-        </div>
-        <aside class="hero-card" aria-label="Foundation reflection">
-          <div class="quote-mark">“</div>
-          <p class="quote">
-            This foundation exists to preserve a life of extraordinary kindness and transform remembrance into enduring service.
-          </p>
-          <div class="quote-source">The Maryam Mottaghi Foundation</div>
-        </aside>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about-maryam.html">About Maryam</a>
+    <a href="maryams-story.html">Her Story</a>
+    <a href="programs.html">Programs</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="governance.html">Governance</a>
+    <a href="contact.html">Contact</a>
+    <a class="donate-nav" href="donate.html">Donate</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="content">
+    <div class="hero-inner">
+      <div class="eyebrow">A legacy of love, sacrifice, and education</div>
+      <h1>Honoring a Life.<br>Illuminating Futures.</h1>
+      <div class="light-line"></div>
+      <p>The Maryam Mottaghi Foundation carries forward the spirit of a woman whose life was marked by selflessness, faith, resilience, education, and devotion to others.</p>
+
+      <div class="buttons">
+        <a class="button primary" href="donate.html">Support the Foundation</a>
+        <a class="button secondary" href="maryams-story.html">Read Maryam’s Story</a>
       </div>
-    </section>
-
-    <section id="mission">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-label">Mission</span>
-            <h2>A foundation rooted in compassion, faith, and educational upliftment.</h2>
-          </div>
-          <p class="lede">
-            Inspired by Maryam Mottaghi’s life of sacrifice and love, the foundation is dedicated to supporting individuals facing barriers to education, stability, and opportunity. Our work is guided by service, integrity, and the belief that every human being deserves encouragement, dignity, and the chance to flourish.
-          </p>
-        </div>
-
-        <div class="mission-grid">
-          <article class="card">
-            <h3>Educational support</h3>
-            <p>Provide scholarships, tools, and assistance that help students and emerging learners continue their education with confidence and hope.</p>
-          </article>
-          <article class="card">
-            <h3>Mentorship and encouragement</h3>
-            <p>Create pathways for guidance, belonging, and practical support for those navigating personal, educational, professional, or financial barriers.</p>
-          </article>
-          <article class="card">
-            <h3>Service in Maryam’s spirit</h3>
-            <p>Honor a life of devotion and sacrifice by advancing compassionate work that reflects her generosity, humility, and faith.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-label">About Maryam</span>
-            <h2>A life that gave more than it ever asked to receive.</h2>
-          </div>
-          <p class="lede">
-            Maryam Mottaghi was a woman of deep faith, extraordinary tenderness, and quiet strength. She devoted her life to her family and to the well-being of others, carrying burdens with grace and offering love without condition. This foundation exists not only in her memory, but in continuity with the values she lived every day.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="card portrait-card">
-            <div class="portrait-inner portrait-photo-wrap">
-              <img src="maryam.jpeg" alt="Maryam Mottaghi smiling warmly outdoors" class="portrait-photo" />
-            </div>
-          </div>
-          <article class="card">
-            <h3>Why this foundation was created</h3>
-            <p>
-              Maryam’s life was defined by sacrifice, service, and an unwavering capacity to love. She uplifted others even through hardship, and her presence brought comfort, warmth, and dignity wherever she went. The foundation was created so that her light would continue to reach people she never had the chance to meet.
-            </p>
-            <p>
-              In honoring her, we hope to support those who need practical help, encouragement, and access to opportunity — especially in educational settings where one act of support can change the course of a life.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="story" class="story-section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-label">Her Story</span>
-            <h2>Curiosity, courage, sacrifice, and service.</h2>
-          </div>
-          <p class="lede">
-            Maryam’s story is one of brilliance and resilience: a self-taught artist and teacher, a student and professional, a mother who rebuilt life across countries, and a devoted Bahá’í whose home and heart remained open to those in need.
-          </p>
-        </div>
-
-        <div class="story-layout">
-          <article class="story-card">
-            <h3>Maryam’s Celebration of Life</h3>
-            <p>
-              Maryam Mottaghi entered the world on December 8, 1946, in Yazd, Iran, to Sayed Yahya Mottaghi and Zahra Mottaghi. Within her family constellation were two elder sisters, Bibi Rohbarb and Ashraf, along with a younger brother named Mohammad Agha. Although they all belonged to the Sayed lineage, Maryam, her parents, and her eldest sister embraced the Bahá’í faith.
-            </p>
-            <p>
-              From a young age, Maryam exhibited a natural curiosity and a profound desire to learn, teach, assist, and contribute to the well-being of those around her — be it friends, family, community members, or neighbors. Her thirst for knowledge was evident early on, as she eagerly delved into books, teaching herself until she had the opportunity to attend formal schooling.
-            </p>
-            <p>
-              Maryam possessed a remarkable talent for sewing and fashion, entirely self-taught and hailed as a prodigy in her craft. Without the aid of patterns or formal training, her extraordinary skill transcended mere replication; she could effortlessly and flawlessly recreate designs simply by sight, often enhancing them to surpass the original, all without the need for measurements or guides.
-            </p>
-            <p>
-              Driven by her compassionate and generous spirit, Maryam bestowed her handmade creations upon family, friends, and even neighbors facing hardships. After completing high school, she established a government-recognized and accredited fashion institute. Taking on the roles of administrator, instructor, and diploma provider, she guided her students through rigorous training, ensuring their successful graduation. Upon completion, she diligently processed their diplomas, sending them to the state for official acknowledgment and endorsement.
-            </p>
-            <p>
-              Amidst her commitments, Maryam pursued dual degrees in Meteorology and Business Management at the University of Tehran. Following graduation, she made the decision to sell her esteemed fashion institute and transitioned into a role as a meteorologist at Mehrabad International Airport. In a testament to her versatility, she soon expanded her responsibilities to include work in the airport’s Human Resources department, seamlessly balancing both meteorology and HR duties. Throughout her career, Maryam was revered for her expertise, cherished for her warmth, and deeply respected by all who knew her.
-            </p>
-
-            <div class="story-divider"></div>
-
-            <h3>Marriage, family, and courage through persecution</h3>
-            <p>
-              Following her marriage to Jamshid Taefi, Maryam played a pivotal role in their journey together. While providing unwavering support for their livelihood, she also encouraged Jamshid to pursue higher education. Thanks to her steadfast encouragement, Jamshid obtained a degree in accounting, eventually securing a position with the government in this field.
-            </p>
-            <p>
-              In the tumultuous aftermath of the revolution, Bahá’ís faced escalating persecution, enduring loss of livelihoods, resources, and even lives. When Maryam found herself among those who lost their jobs, her primary concern became supporting her family. Returning to her roots in sewing, she embarked on a journey of resilience, single-mindedly providing for her loved ones. Additionally, Maryam played a pivotal role in securing employment for Jamshid within her family’s network, demonstrating her unwavering determination and resourcefulness as they navigated through adversity together.
-            </p>
-            <p>
-              Maryam is the proud mother of two children, Arash and Azadeh. Before the revolution, Arash was already attending school. However, when it was time for Azadeh to enroll in kindergarten after the revolution, Maryam faced formidable challenges. Despite her tireless efforts to secure Azadeh’s enrollment, every application form posed the same obstacle: it required disclosure of the child’s religion. Upon revealing their Bahá’í faith, they were unjustly denied admission and instructed to leave, leaving Maryam grappling with discrimination and the denial of her daughter’s right to education.
-            </p>
-            <p>
-              Recognizing the bleak prospects for her children’s future in Iran, Maryam made a bold and selfless choice: to forsake everything and everyone she knew, all in pursuit of a better life for her young family. She took decisive action, liquidating her possessions and parting with cherished jewelry to finance their escape from Iran, determined to provide her children with the opportunity for a brighter future elsewhere.
-            </p>
-            <p>
-              Maryam’s unwavering courage and resilience were the bedrock upon which her family relied. Throughout their lives, her indomitable spirit served as a guiding light, particularly during their perilous escape. Despite the daunting and intense nature of their journey, Maryam remained a beacon of strength, comforting her loved ones and reframing their ordeal as an adventure rather than a dire necessity for survival. Her fearless demeanor and unwavering optimism helped carry them through the darkest of times.
-            </p>
-
-            <div class="family-grid">
-              <figure class="photo-card">
-                <img src="./maryam-jamshid.jpg" class="photo-focus-jamshid" alt="Maryam and Jamshid" />
-                <figcaption>Maryam and Jamshid</figcaption>
-              </figure>
-              <figure class="photo-card">
-                <img src="./maryam-arash.jpg" alt="Maryam with Arash" />
-                <figcaption>Maryam and Arash</figcaption>
-              </figure>
-              <figure class="photo-card">
-                <img src="./maryam-azadeh.jpg" alt="Maryam with Azadeh" />
-                <figcaption>Maryam and Azadeh</figcaption>
-              </figure>
-            </div>
-
-            <div class="story-divider"></div>
-
-            <h3>Pakistan, sacrifice, and a new beginning</h3>
-            <p>
-              Over the course of four days and five nights, Maryam and her family trailed behind smugglers on their arduous journey from Iran to the border of Pakistan. Amidst the challenges of the trip, when the smugglers attempted to extort more money, Maryam demonstrated remarkable courage. Fearlessly confronting the smugglers, she refused to yield, insisting they return to retrieve her husband and daughter, who had been left behind during the previous rest period. Her resolute determination ensured the safety and unity of her family amidst the perilous passage.
-            </p>
-            <p>
-              Upon their arrival in Pakistan, Maryam wasted no time in taking action. With the funds she had managed to save through her sacrifices, she secured a home for her family and immediately began sewing to provide for their basic needs. Despite the demands of earning a living, Maryam also took on the responsibility of homeschooling her son and daughter. In addition to these duties, she remained actively engaged in Bahá’í activities at the Lahore Bahá’í Center, offering her assistance and support to fellow Bahá’ís, especially the young ones in need. Maryam’s unwavering dedication to her family and community showcased her remarkable strength and resilience.
-            </p>
-            <p>
-              Maryam’s nurturing instinct extended beyond her immediate family. She frequently assumed a maternal role for young adults in her community, offering care and support, especially during times of illness or hardship. Without hesitation, she opened her home to those in need, providing comfort and assistance to individuals who were unable to care for themselves after serious illnesses. Maryam’s unwavering devotion to serving others exemplified the essence of true Bahá’í faith, reflecting her boundless love and selflessness as a servant of the divine.
-            </p>
-            <p>
-              In 1987, after 14 months of relentless sacrifice, their perseverance paid off when they finally received sponsorship to immigrate to America. Within days of their arrival, Maryam wasted no time in securing multiple jobs to provide for her family. Not content to settle, she also enrolled herself in night school, driven to enhance her communication skills and kickstart her career in her new home, all while continuing to shoulder the sole responsibility of supporting her family. Her unwavering determination and work ethic were evident as she embarked on this new chapter of her life in America.
-            </p>
-
-            <div class="family-grid">
-              <figure class="photo-card">
-                <img src="./maryam-pakistan.jpg" class="photo-focus-pakistan" alt="Maryam and family in Pakistan" />
-                <figcaption>She carried her family forward with courage and unwavering love.</figcaption>
-              </figure>
-              <figure class="photo-card">
-                <img src="./maryam-graduation.jpg" class="photo-focus-grad" alt="Maryam at graduation" />
-                <figcaption>Education and achievement</figcaption>
-              </figure>
-              <figure class="photo-card">
-                <img src="./maryam-bahai-center.jpg" class="photo-focus-bahai" alt="Maryam at a Bahá’í holy place" />
-                <figcaption>Faith and service</figcaption>
-              </figure>
-            </div>
-
-            <div class="story-divider"></div>
-
-            <h3>Education, technology, teaching, and family devotion</h3>
-            <p>
-              During her quest to find a fashion institute in Pasadena, Maryam found herself intrigued by signs advertising computer classes, she decided to explore further. Before she knew it, she had enrolled herself in Pasadena City College. Instead of opting for the known and familiar, Maryam chose to challenge herself and embark on a completely new career path. While enrolled in computer science courses, she simultaneously supported both herself and her family by working in the college’s Human Resources department. Her willingness to embrace change and her dedication to self-improvement were evident as she navigated this new chapter in her life.
-            </p>
-            <p>
-              After a period of time, Maryam transferred to California State University, Los Angeles, where she continued her studies in both Computer Information Systems and Technology. In 1998, she achieved a significant milestone by graduating from California State University, Los Angeles, with a double degree. Shortly thereafter, she embarked on a new chapter in her career by transitioning into a teaching role, sharing her expertise in the very courses she had once taken herself.
-            </p>
-            <p>
-              Maryam dedicated herself to academia as a professor at the university until a significant event changed her course. Upon the birth of her granddaughter and her son’s relocation to California, she made the selfless decision to prioritize family. With her son’s young family moving in with her, Maryam wholeheartedly devoted herself to their care. Sacrificing her career, she became the sole provider and caregiver for her granddaughter, ensuring her well-being and nurturing her development. Maryam’s tireless efforts bore fruit as her granddaughter flourished, achieving accolades in high school and later in college, a testament to Maryam’s unwavering love and support.
-            </p>
-
-            <div class="story-divider"></div>
-
-            <h3>Faith, devotion, prayer, and eternal love</h3>
-            <p>
-              Amidst her busy and fulfilling life, Maryam remained steadfast in her devotion to the teachings of Bahá’u’lláh. Without falter, she hosted Bahá’í deepening classes in her home every week, while also serving on the Local Spiritual Assembly and offering support to other communities and firesides. As the years progressed and Ruhi classes were introduced, Maryam enthusiastically opened her home to host each book study session and every assembly gathering and feast. Her commitment to her faith never wavered, and she remained a proud and active Bahá’í until the very end of her life.
-            </p>
-            <p>
-              Maryam’s compassionate spirit endeared her to many, and she was a source of love and support for all who crossed her path. Whether it was family, friends, neighbors, or coworkers facing hardships, they could always rely on her unwavering love and prayers. Maryam selflessly recited 500 “Is there any remover of difficulty?” prayer for each person in need, fervently praying for their healing, success, or thriving, depending on their specific needs. Her generosity of spirit and boundless love infused each prayer, offered willingly and with a heart brimming with compassion and vitality.
-            </p>
-            <p>
-              Just as Maryam reached a point in her life where she could finally take a well-deserved rest and focus on her own well-being, her health began to decline. The accumulated stresses and sacrifices of a lifetime caught up with her, taking a toll on her physical well-being.
-            </p>
-            <p>
-              As Maryam’s health declined, she received the devastating diagnosis of pancreatic cancer, which had already spread to her liver, lungs, intestines, and kidneys. Despite her courageous and unwavering fight, she eventually succumbed to the illness, departing for the Abha Kingdom on May 15, 2024. Her departure left countless hearts shattered, but she now rests in the embrace of the Almighty, surrounded by His grace and at peace.
-            </p>
-            <p>
-              Maryam Mottaghi lived her life with grace, passion, courage, fierce determination, deep love, and abiding dedication to others, and gave of herself joyfully, with the love of God written in her heart. May God perpetually safeguard this angel, granting her eternal happiness, health, and peace in the celestial paradise she now calls home.
-            </p>
-          </article>
-
-          <aside class="prayer-stack" aria-label="Bahá’í prayers and reflections">
-            <div class="prayer-card">
-              <img class="prayer-symbol" src="./bahai-symbol.jpg" alt="Bahá’í symbol" />
-              <blockquote>
-                “O my God, Thy Trust hath been returned unto Thee. It behooveth Thy grace and Thy bounty that have compassed Thy dominions on earth and in heaven, to vouchsafe unto Thy newly welcomed one Thy gifts and Thy bestowals, and the fruits of the tree of Thy grace! Powerful art Thou to do as Thou willest, there is none other God but Thee, the Gracious, the Most Bountiful, the Compassionate, the Bestower, the Pardoner, the Precious, the All-Knowing.”
-              </blockquote>
-              <cite>Bahá’u’lláh</cite>
-            </div>
-            <div class="prayer-card">
-              <blockquote>
-                “O Thou Kind Lord! This dearly cherished maidservant was attracted to Thee, and through reflection and discernment longed to attain Thy presence and enter Thy realms. With tearful eyes she fixed her gaze on the Kingdom of Mysteries. Many a night she spent in deep communion with Thee, and many a day she lived in intimate remembrance of Thee.”
-              </blockquote>
-              <cite>‘Abdu’l-Bahá</cite>
-            </div>
-            <div class="prayer-card">
-              <blockquote>
-                “O my God, O Forgiver of sins and Dispeller of afflictions! O Thou Who art the Pardoner, the Merciful! I raise my suppliant hands to Thee, tearfully beseeching the court of Thy divine Essence to forgive, through Thy grace and clemency, Thy handmaiden who hath ascended unto the seat of truth.”
-              </blockquote>
-              <cite>‘Abdu’l-Bahá</cite>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-label">Memories</span>
-            <h2>Moments of warmth, beauty, and presence.</h2>
-          </div>
-          <p class="lede">
-            A small collection of images honoring Maryam’s joy, faith, family, and love of natural beauty. This gallery can continue to grow over time.
-          </p>
-        </div>
-        <div class="gallery-grid">
-          <figure class="photo-card">
-            <img src="./maryam-cactus-garden.jpg" alt="Maryam smiling in a garden" />
-            <figcaption>Maryam in the garden</figcaption>
-          </figure>
-          <figure class="photo-card">
-            <img src="./maryam-gorgeous.jpg" alt="Maryam smiling at Arboretum" />
-            <figcaption>Joy in nature</figcaption>
-          </figure>
-          <figure class="photo-card">
-            <img src="./maryam-garden-walk.jpg" alt="Maryam walking in a garden" />
-            <figcaption>A peaceful path</figcaption>
-          </figure>
-          <figure class="photo-card">
-            <img src="./maryam-orchid.jpg" alt="Maryam smiling beside orchids" />
-            <figcaption>Flowers and light</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="programs">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-label">Programs</span>
-            <h2>Programs designed to transform remembrance into opportunity.</h2>
-          </div>
-          <p class="lede">
-            The Maryam Mottaghi Foundation is in its early stages. As it grows, it seeks to build meaningful, carefully stewarded programs led by highly regarded, trained, skilled, experienced, established, and recognized professionals in their fields and communities.
-          </p>
-        </div>
-
-        <div class="program-grid">
-          <article class="card program-card">
-            <div class="num">1</div>
-            <h3>Fashion Design & Creation</h3>
-            <p>Inspired by Maryam’s extraordinary gift for fashion, this program will teach students the full creative journey from idea to finished garment: design concept, sketching, drafting, pattern creation, cutting, sewing, refinement, and presentation. The goal is to give learners not only practical skill, but the confidence to create beauty with their own hands.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">2</div>
-            <h3>Technology & Computer Information Systems</h3>
-            <p>Maryam rebuilt her career through technology, and this program honors that courage by helping others enter the modern workforce. Participants may receive guidance in computers, coding, programming, cybersecurity, automation, engineering pathways, and practical digital skills needed for meaningful careers in technology.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">3</div>
-            <h3>College Admissions & Life Advancement</h3>
-            <p>No student or adult learner should have to navigate opportunity alone. This program will support junior high students preparing for high school, high school students applying to college, and adults returning to education or seeking advancement. Through mentorship and resource navigation, the foundation seeks to make the path forward less frightening and more possible.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">4</div>
-            <h3>Culinary Arts & Nourishment</h3>
-            <p>Maryam’s cooking was an expression of love, generosity, patience, and welcome. This program will offer professional cooking lessons taught by skilled chefs, helping participants learn technique, discipline, creativity, and the deeper joy of feeding others with care.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">5</div>
-            <h3>Writing, Short Stories & Publishing</h3>
-            <p>Maryam loved books, storytelling, and expression. This program will guide individuals in shaping memories, imagination, and lived experience into written work — from short stories to personal narratives — with support in drafting, editing, developing voice, and exploring pathways to publication.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">6</div>
-            <h3>Journalism & Media Production</h3>
-            <p>This program will introduce participants to the fundamentals of journalism: identifying meaningful stories, researching responsibly, interviewing with integrity, writing clearly, and presenting stories across media. It may also include production training in cameras, studio workflows, control rooms, switchers, playback systems, and the technical tools used to bring stories to life.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">7</div>
-            <h3>Filmmaking & Creative Production</h3>
-            <p>From idea to audience, this program will teach the art and discipline of filmmaking: concept development, writing, storyboarding, scripting, filming, editing, producing, and understanding how completed work can reach viewers. It honors Maryam’s lifelong encouragement of creativity and the courage to tell meaningful stories.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">8</div>
-            <h3>Literacy & Foundational Learning</h3>
-            <p>Literacy is dignity, access, and freedom. This program will support children and adults who need help learning to read, write, and communicate with confidence, while fostering the love of books, learning, and storytelling that Maryam carried throughout her life.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">9</div>
-            <h3>Character & Spiritual Education</h3>
-            <p>Inspired by Maryam’s example of faith without force, this program will nurture virtues that help build a better society: kindness, truthfulness, compassion, service, responsibility, justice, and love. Rooted in the belief that moral education begins early, it seeks to help children become thoughtful, caring human beings who uplift the world around them.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">10</div>
-            <h3>Legal Guidance & Resource Navigation</h3>
-            <p>For those facing hardship, legal systems can feel impossible to understand alone. This program will seek to connect individuals with appropriate guidance, resources, and trusted professionals so that people in need are not left unsupported when the stakes are high and the path is unclear.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">11</div>
-            <h3>Mental Health Counseling & Emotional Support</h3>
-            <p>Stable mental health is a foundation for learning, healing, service, and a meaningful life. This program will seek to connect individuals with compassionate, qualified mental health professionals and supportive resources so they can move forward with greater strength, clarity, and hope.</p>
-          </article>
-
-          <article class="card program-card">
-            <div class="num">12</div>
-            <h3>Community Support & Emergency Encouragement</h3>
-            <p>Maryam’s life showed that sometimes one act of care can change the course of a person’s day, year, or life. As the foundation grows, it hopes to provide practical, compassionate support to individuals and families experiencing difficulty, always guided by dignity, discretion, and love.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="support">
-      <div class="wrap support-grid">
-        <article class="card donate-box">
-          <div>
-            <span class="section-label">Support</span>
-            <h2>Help carry this work forward.</h2>
-          </div>
-          <p class="lede">
-            Your support helps establish and strengthen a foundation created in honor of a remarkable woman whose life was devoted to others. Contributions will help the foundation grow its educational and service-based efforts in Maryam’s memory.
-          </p>
-          <div class="status-note">
-            Donation information can be displayed here. While the foundation’s IRS recognition process is underway, this section may be updated as administrative details are finalized.
-          </div>
-          <div class="actions">
-            <a class="btn btn-primary" href="mailto:themaryammottaghifoundation@gmail.com?subject=Support%20the%20Foundation">Inquire About Giving</a>
-            <a class="btn btn-secondary" href="#contact">Contact the Foundation</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Ways to support</h3>
-          <ul>
-            <li>Make a contribution in honor of Maryam’s life and legacy.</li>
-            <li>Share the foundation with others who believe in education, dignity, and compassionate service.</li>
-            <li>Reach out to explore volunteer, partnership, sponsorship, or advisory support.</li>
-          </ul>
-          <p>
-            The foundation intends to steward all support with care, transparency, and fidelity to its mission.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="memorial">
-      <div class="wrap memorial-block">
-        <span class="section-label">In remembrance</span>
-        <h2>Built in memory, sustained through love.</h2>
-        <p>
-          The Maryam Mottaghi Foundation is more than an organization. It is a living expression of remembrance — a way of ensuring that the love, sacrifice, and faith Maryam embodied continue to bless others. Every act of support, every opportunity made possible, and every life encouraged through this work stands as a testament to the beauty of her spirit.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-label">Contact</span>
-            <h2>Connect with the foundation.</h2>
-          </div>
-          <p class="lede">
-            For questions, partnership inquiries, or interest in supporting the foundation’s work, please use the contact details below.
-          </p>
-        </div>
-
-        <div class="contact">
-          <article class="card">
-            <h3>Foundation contact</h3>
-            <ul class="contact-list">
-              <li><strong>Name:</strong> The Maryam Mottaghi Foundation</li>
-              <li><strong>Website:</strong> maryammottaghifoundation.org</li>
-              <li><strong>Email:</strong> <a href="mailto:themaryammottaghifoundation@gmail.com">themaryammottaghifoundation@gmail.com</a></li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Launch notes</h3>
-            <p>
-              This site is the foundation’s initial public presence and may continue to evolve as administrative approvals, donation workflows, and program details are finalized.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-line">
-      <div>© <span id="year"></span> The Maryam Mottaghi Foundation</div>
-      <div>Created with reverence, service, and hope.</div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<section>
+  <div class="content">
+    <div class="quote-panel">
+      <p>Some people are loved in this world.<br><br>Very few become a force through which love continuously flows outward to everyone around them.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="content split">
+    <div>
+      <div class="eyebrow">Who was Maryam?</div>
+      <h2>A life that gave more than it ever asked to receive.</h2>
+      <div class="light-line"></div>
+      <p>Maryam Mottaghi was a woman of deep faith, extraordinary tenderness, and quiet strength. She devoted her life to her family and to the well-being of others, carrying burdens with grace and offering love without condition.</p>
+      <p>This foundation exists not only in her memory, but in continuity with the values she lived every day.</p>
+      <a class="button secondary" href="about-maryam.html">About Maryam</a>
+    </div>
+
+    <div class="portrait-card">
+      <img src="maryam-portrait.jpg" alt="Maryam Mottaghi">
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="content">
+    <div class="eyebrow">Maryam’s values</div>
+    <h2>The values that became her legacy.</h2>
+    <div class="light-line"></div>
+    <p>Her life taught compassion, courage, sacrifice, hospitality, faith, humility, perseverance, education, service, and love — not as ideals, but as daily practice.</p>
+
+    <div class="value-grid">
+      <div class="value">Compassion</div>
+      <div class="value">Education</div>
+      <div class="value">Faith</div>
+      <div class="value">Courage</div>
+      <div class="value">Sacrifice</div>
+      <div class="value">Hospitality</div>
+      <div class="value">Service</div>
+      <div class="value">Love</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="content">
+    <div class="eyebrow">Programs</div>
+    <h2>Programs designed to transform remembrance into opportunity.</h2>
+    <div class="light-line"></div>
+    <p>The Foundation is building meaningful, carefully stewarded programs rooted in education, mentorship, skills, creativity, dignity, and compassionate support.</p>
+
+    <div class="program-grid">
+
+      <div class="program-card">
+        <img src="mmf-scholarships.png" alt="Scholarship and education materials">
+        <div class="program-body">
+          <h3>Scholarships</h3>
+          <p>Financial and educational support to help learners continue forward with confidence and hope.</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="mmf-mentorship.png" alt="Mentorship and guidance setting">
+        <div class="program-body">
+          <h3>Mentorship</h3>
+          <p>Guidance, encouragement, and practical support for those navigating educational and personal barriers.</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="mmf-fashion.png" alt="Fashion design and sewing workspace">
+        <div class="program-body">
+          <h3>Fashion Design</h3>
+          <p>Inspired by Maryam’s extraordinary gift for fashion, sewing, teaching, and creation.</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="mmf-technology.png" alt="Technology and computer learning workspace">
+        <div class="program-body">
+          <h3>Technology</h3>
+          <p>Helping learners build digital skills, confidence, and access to modern career pathways.</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="mmf-culinary.png" alt="Warm culinary arts kitchen">
+        <div class="program-body">
+          <h3>Culinary Arts</h3>
+          <p>Honoring Maryam’s cooking as an expression of love, generosity, patience, and welcome.</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="mmf-writing.png" alt="Writing and storytelling workspace">
+        <div class="program-body">
+          <h3>Writing & Publishing</h3>
+          <p>Supporting voice, memory, imagination, personal narrative, and pathways to publication.</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="mmf-journalism.png" alt="Journalism notebook and camera">
+        <div class="program-body">
+          <h3>Journalism & Media</h3>
+          <p>Training rooted in meaningful stories, responsible research, clear writing, and integrity.</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="mmf-filmmaking.png" alt="Filmmaking and creative production studio">
+        <div class="program-body">
+          <h3>Filmmaking</h3>
+          <p>Teaching the art and discipline of storytelling from idea to audience.</p>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <img src="mmf-community.png" alt="Community support and care">
+        <div class="program-body">
+          <h3>Community Support</h3>
+          <p>Practical, compassionate support guided by dignity, discretion, and love.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="buttons">
+      <a class="button primary" href="programs.html">Explore Programs</a>
+    </div>
+  </div>
+</section>
+
+<section class="donate-band">
+  <div class="content donate-box">
+    <div>
+      <div class="eyebrow">Support</div>
+      <h2>Help keep Maryam’s light moving through the world.</h2>
+      <div class="light-line"></div>
+      <p>Your support helps establish and strengthen educational and service-based programs created in honor of Maryam’s life and legacy.</p>
+      <a class="button primary" href="donate.html">Donate Now</a>
+    </div>
+
+    <div class="giving-list">
+      <div><strong>Zelle:</strong> Fee-free giving option.</div>
+      <div><strong>Check by mail:</strong> No processing fees.</div>
+      <div><strong>ACH / bank transfer:</strong> Low or no fees depending on bank.</div>
+      <div><strong>PayPal Giving Fund:</strong> Add once nonprofit profile is fully connected.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="content split">
+    <div class="panel">
+      <div class="eyebrow">Lives she changed</div>
+      <h2>A living archive of love.</h2>
+      <div class="light-line"></div>
+      <p>Maryam’s life touched family, friends, neighbors, students, coworkers, community members, and strangers. This archive will preserve the stories of those whose lives were changed by her love.</p>
+      <a class="button secondary" href="lives-she-changed.html">Read Stories</a>
+    </div>
+
+    <div class="panel">
+      <div class="eyebrow">Transparency</div>
+      <h2>Built with care and accountability.</h2>
+      <div class="light-line"></div>
+      <p>The Foundation is committed to responsible stewardship, transparent governance, and public trust as its work grows.</p>
+      <a class="button secondary" href="governance.html">View Governance</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 The Maryam Mottaghi Foundation<br>
+  Created with reverence, service, and hope.
+</footer>
+
 </body>
 </html>
