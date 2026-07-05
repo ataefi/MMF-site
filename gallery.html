@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gallery | The Maryam Mottaghi Foundation</title>
+
+<style>
+:root{
+  --ivory:#F9F6EF;--cream:#FFF9F2;--parchment:#F4EBDD;
+  --orange:#E67E3A;--saffron:#DFA343;--sunrise:#F2C15E;
+  --ink:#2F2621;--soft:#76675F;--border:rgba(223,163,67,.25);
+  --shadow:0 24px 70px rgba(82,45,20,.12);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:linear-gradient(180deg,var(--cream),var(--ivory) 45%,var(--parchment));}
+header{min-height:96px;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;background:rgba(255,249,242,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--ink)}
+.brand img{width:74px;height:74px;object-fit:contain}
+.brand-text strong{display:block;color:#B87922;letter-spacing:4px;text-transform:uppercase;font-size:17px}
+.brand-text span{color:var(--soft);font-size:13px;letter-spacing:2.5px;text-transform:uppercase}
+nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-size:15px;font-weight:bold}
+nav a.donate-nav{background:linear-gradient(135deg,var(--orange),var(--saffron));color:white;padding:13px 22px;border-radius:999px;box-shadow:0 12px 28px rgba(230,126,58,.24);}
+section{padding:90px 6vw}
+.content{max-width:1180px;margin:auto}
+.eyebrow{color:#A87827;letter-spacing:4px;text-transform:uppercase;font-weight:bold;font-size:14px;margin-bottom:18px}
+.light-line{width:120px;height:2px;margin:24px 0 34px;background:linear-gradient(90deg,transparent,var(--sunrise),var(--orange),var(--sunrise),transparent)}
+h1{font-size:clamp(56px,8vw,108px);line-height:.98;font-weight:400;color:var(--orange);margin:0 0 26px}
+h2{font-size:clamp(38px,5vw,68px);line-height:1.05;font-weight:400;color:var(--orange);margin:0}
+h3{font-size:28px;color:#B87922;font-weight:400;margin:0 0 14px}
+p{font-size:19px;line-height:1.8;color:var(--soft)}
+.hero{min-height:72vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(255,249,242,.96),rgba(255,249,242,.72),rgba(255,249,242,.32)),url("./maryam-gorgeous.jpg");background-size:cover;background-position:center;border-bottom:1px solid var(--border)}
+.hero-inner{max-width:780px}
+.quote{background:rgba(255,255,255,.72);border:1px solid var(--border);border-radius:34px;padding:58px;box-shadow:var(--shadow);text-align:center}
+.quote p{font-size:30px;line-height:1.55;color:#5B463A;margin:0}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:48px}
+.photo-card{background:white;border:1px solid var(--border);border-radius:30px;overflow:hidden;box-shadow:0 20px 60px rgba(82,45,20,.09)}
+.photo-card img{width:100%;height:380px;object-fit:cover;display:block}
+.caption{padding:26px}
+.caption p{font-size:17px;margin:0}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.feature img{width:100%;height:560px;object-fit:cover;border-radius:34px;border:1px solid var(--border);box-shadow:var(--shadow);background:white;padding:14px}
+.band{background:linear-gradient(135deg,#FFF9F2,#F4EBDD);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.button{display:inline-block;text-decoration:none;border-radius:999px;padding:16px 28px;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:bold;border:1px solid var(--border);color:#A36B23;background:rgba(255,255,255,.58);margin-top:24px}
+footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);border-top:1px solid var(--border);letter-spacing:2px}
+@media(max-width:980px){header{display:block;text-align:center}.brand{justify-content:center}nav{margin-top:20px}nav a{display:inline-block;margin:8px 10px}.feature{grid-template-columns:1fr}.feature img,.photo-card img{height:auto}}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="index.html">
+    <img src="./mmf-logo.png" alt="The Maryam Mottaghi Foundation logo">
+    <div class="brand-text">
+      <strong>The Maryam Mottaghi Foundation</strong>
+      <span>In memory. In service. In light.</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about-maryam.html">About Maryam</a>
+    <a href="maryams-story.html">Her Story</a>
+    <a href="programs.html">Programs</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="governance.html">Governance</a>
+    <a href="contact.html">Contact</a>
+    <a class="donate-nav" href="donate.html">Donate</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="content hero-inner">
+    <div class="eyebrow">Gallery</div>
+    <h1>What did love look like?</h1>
+    <div class="light-line"></div>
+    <p>This gallery honors Maryam through real photographs, real memories, and the visible warmth of a life that continues to illuminate those who loved her.</p>
+  </div>
+</section>
+
+<section>
+  <div class="content quote">
+    <p>To see Maryam is to remember that love can be gentle, radiant, practical, faithful, and strong — all at once.</p>
+  </div>
+</section>
+
+<section>
+  <div class="content feature">
+    <div>
+      <div class="eyebrow">Maryam</div>
+      <h2>A face remembered with love.</h2>
+      <div class="light-line"></div>
+      <p>These photographs are not decoration. They are part of the Foundation’s heart. They preserve the presence, warmth, grace, and tenderness of the woman whose life inspired this work.</p>
+      <p>Every image belongs to a larger story — of family, faith, sacrifice, resilience, education, beauty, and service.</p>
+    </div>
+    <img src="./maryam.jpeg" alt="Maryam Mottaghi">
+  </div>
+</section>
+
+<section class="band">
+  <div class="content">
+    <div class="eyebrow">Memories</div>
+    <h2>Moments from a luminous life.</h2>
+    <div class="light-line"></div>
+
+    <div class="gallery-grid">
+
+      <div class="photo-card">
+        <img src="./maryam-gorgeous.jpg" alt="Maryam Mottaghi">
+        <div class="caption">
+          <h3>Grace</h3>
+          <p>Maryam carried beauty quietly, without needing attention, but never without being noticed by those who loved her.</p>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./maryam-graduation.jpg" alt="Maryam Mottaghi graduation">
+        <div class="caption">
+          <h3>Education</h3>
+          <p>Her belief in learning, discipline, and becoming continues through the Foundation’s educational mission.</p>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./maryam-pakistan.jpg" alt="Maryam Mottaghi in Pakistan">
+        <div class="caption">
+          <h3>Resilience</h3>
+          <p>Through difficult chapters and uncertain transitions, Maryam remained faithful, strong, and devoted to her family.</p>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./maryam-parents.jpg" alt="Maryam Mottaghi family memory">
+        <div class="caption">
+          <h3>Family</h3>
+          <p>Her love for family was constant, sacrificial, and woven through every part of her life.</p>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./maryam-jamshid.jpg" alt="Maryam Mottaghi life memory">
+        <div class="caption">
+          <h3>Life</h3>
+          <p>Maryam’s story includes devotion, work, migration, motherhood, sacrifice, and a love that endured every hardship.</p>
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./maryam-orchid.jpg" alt="Maryam Mottaghi orchid memory">
+        <div class="caption">
+          <h3>Beauty</h3>
+          <p>She created beauty everywhere — in her home, her cooking, her sewing, her prayers, and the way people felt around her.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="content feature">
+    <img src="./maryam-portrait.jpg" alt="Maryam Mottaghi">
+
+    <div>
+      <div class="eyebrow">A living archive</div>
+      <h2>The gallery will grow with memory.</h2>
+      <div class="light-line"></div>
+      <p>Maryam’s life cannot be held in one photograph, one page, or one story. This gallery is a beginning — a place where her presence can continue to be seen and remembered with reverence.</p>
+      <p>As the Foundation grows, this archive can include more photographs from family, friends, community gatherings, memorials, and moments of service inspired by her life.</p>
+      <a class="button" href="lives-she-changed.html">Lives She Changed</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 The Maryam Mottaghi Foundation<br>
+  Created with reverence, service, and hope.
+</footer>
+
+</body>
+</html>
