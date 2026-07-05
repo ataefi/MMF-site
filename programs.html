@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Programs | The Maryam Mottaghi Foundation</title>
+
+<style>
+:root{
+  --ivory:#F9F6EF;--cream:#FFF9F2;--parchment:#F4EBDD;--linen:#FCFAF6;
+  --orange:#E67E3A;--saffron:#DFA343;--sunrise:#F2C15E;--apricot:#F5B584;
+  --ink:#2F2621;--soft:#76675F;--border:rgba(223,163,67,.25);
+  --shadow:0 24px 70px rgba(82,45,20,.12);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:linear-gradient(180deg,var(--cream),var(--ivory) 45%,var(--parchment));}
+header{min-height:96px;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;background:rgba(255,249,242,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--ink)}
+.brand img{width:74px;height:74px;object-fit:contain}
+.brand-text strong{display:block;color:#B87922;letter-spacing:4px;text-transform:uppercase;font-size:17px}
+.brand-text span{color:var(--soft);font-size:13px;letter-spacing:2.5px;text-transform:uppercase}
+nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-size:15px;font-weight:bold}
+nav a.donate-nav{background:linear-gradient(135deg,var(--orange),var(--saffron));color:white;padding:13px 22px;border-radius:999px;box-shadow:0 12px 28px rgba(230,126,58,.24);}
+section{padding:90px 6vw}
+.content{max-width:1180px;margin:auto}
+.eyebrow{color:#A87827;letter-spacing:4px;text-transform:uppercase;font-weight:bold;font-size:14px;margin-bottom:18px}
+.light-line{width:120px;height:2px;margin:24px 0 34px;background:linear-gradient(90deg,transparent,var(--sunrise),var(--orange),var(--sunrise),transparent)}
+h1{font-size:clamp(56px,8vw,108px);line-height:.98;font-weight:400;color:var(--orange);margin:0 0 26px}
+h2{font-size:clamp(38px,5vw,68px);line-height:1.05;font-weight:400;color:var(--orange);margin:0}
+h3{font-size:30px;color:#B87922;font-weight:400;margin:0 0 14px}
+p,li{font-size:19px;line-height:1.8;color:var(--soft)}
+.hero{min-height:68vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(255,249,242,.96),rgba(255,249,242,.76),rgba(255,249,242,.32)),url("./mmf-scholarships.png");background-size:cover;background-position:center;border-bottom:1px solid var(--border)}
+.hero-inner{max-width:820px}
+.program{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;border-bottom:1px solid var(--border)}
+.program:nth-child(even) .program-image{order:2}
+.program-image{background:white;border:1px solid var(--border);border-radius:34px;padding:18px;box-shadow:var(--shadow)}
+.program-image img{width:100%;height:500px;object-fit:cover;border-radius:24px;display:block}
+.card{background:rgba(255,255,255,.72);border:1px solid var(--border);border-radius:30px;padding:34px;box-shadow:0 18px 50px rgba(82,45,20,.08)}
+.button{display:inline-block;text-decoration:none;border-radius:999px;padding:16px 28px;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:bold;border:1px solid var(--border);color:#A36B23;background:rgba(255,255,255,.58);margin-top:24px}
+.primary{background:linear-gradient(135deg,var(--orange),var(--saffron));color:white;box-shadow:0 14px 34px rgba(230,126,58,.26);}
+.intro{background:linear-gradient(135deg,#FFF9F2,#F4EBDD);border-bottom:1px solid var(--border)}
+footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);border-top:1px solid var(--border);letter-spacing:2px}
+@media(max-width:980px){header{display:block;text-align:center}.brand{justify-content:center}nav{margin-top:20px}nav a{display:inline-block;margin:8px 10px}.program{grid-template-columns:1fr}.program:nth-child(even) .program-image{order:0}.program-image img{height:auto}}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="index.html">
+    <img src="./mmf-logo.png" alt="The Maryam Mottaghi Foundation logo">
+    <div class="brand-text">
+      <strong>The Maryam Mottaghi Foundation</strong>
+      <span>In memory. In service. In light.</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about-maryam.html">About Maryam</a>
+    <a href="maryams-story.html">Her Story</a>
+    <a href="programs.html">Programs</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="governance.html">Governance</a>
+    <a href="contact.html">Contact</a>
+    <a class="donate-nav" href="donate.html">Donate</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="content hero-inner">
+    <div class="eyebrow">Programs</div>
+    <h1>Transforming remembrance into opportunity.</h1>
+    <div class="light-line"></div>
+    <p>The Foundation’s programs are designed to carry Maryam’s values into action — through education, mentorship, creativity, practical support, and compassionate service.</p>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="content card">
+    <h2>Built from the way Maryam loved.</h2>
+    <div class="light-line"></div>
+    <p>Maryam did not help people in only one way. She taught. She cooked. She sewed. She prayed. She encouraged. She protected. She noticed need before it was spoken. The Foundation’s programs reflect that fullness.</p>
+    <p>Each initiative is meant to help someone move forward with more confidence, dignity, skill, belonging, and hope.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-image"><img src="./mmf-scholarships.png" alt="Scholarship and education materials"></div>
+  <div>
+    <div class="eyebrow">Opening doors</div>
+    <h2>Scholarships</h2>
+    <div class="light-line"></div>
+    <p>Scholarship support helps learners continue forward when cost, circumstance, or hardship threatens to interrupt their education.</p>
+    <p>This program honors Maryam’s belief that learning is not merely achievement. It is dignity, confidence, independence, and possibility.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-image"><img src="./mmf-mentorship.png" alt="Mentorship and guidance setting"></div>
+  <div>
+    <div class="eyebrow">Guidance</div>
+    <h2>Mentorship</h2>
+    <div class="light-line"></div>
+    <p>Mentorship provides encouragement, practical support, and steady guidance for students and young people navigating educational, personal, or professional barriers.</p>
+    <p>Maryam had a way of helping people feel capable before they fully believed it themselves. This program carries that spirit forward.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-image"><img src="./mmf-fashion.png" alt="Fashion design and sewing workspace"></div>
+  <div>
+    <div class="eyebrow">Creation</div>
+    <h2>Fashion Design</h2>
+    <div class="light-line"></div>
+    <p>Fashion design programming honors Maryam’s extraordinary gifts in sewing, design, creativity, and teaching.</p>
+    <p>Through hands-on learning, students can explore beauty, craft, patience, precision, self-expression, and the confidence that comes from making something with their own hands.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-image"><img src="./mmf-technology.png" alt="Technology and computer learning workspace"></div>
+  <div>
+    <div class="eyebrow">Access</div>
+    <h2>Technology</h2>
+    <div class="light-line"></div>
+    <p>Technology programming helps learners build digital confidence, practical skills, and access to modern educational and career pathways.</p>
+    <p>The goal is not technology for its own sake. It is access, independence, problem-solving, and the ability to participate fully in a changing world.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-image"><img src="./mmf-culinary.png" alt="Warm culinary arts kitchen"></div>
+  <div>
+    <div class="eyebrow">Hospitality</div>
+    <h2>Culinary Arts</h2>
+    <div class="light-line"></div>
+    <p>Maryam’s cooking was never only food. It was welcome. It was abundance. It was care made visible.</p>
+    <p>Culinary programming honors that spirit by teaching skill, nourishment, cultural memory, hospitality, and the quiet dignity of feeding others with love.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-image"><img src="./mmf-writing.png" alt="Writing and storytelling workspace"></div>
+  <div>
+    <div class="eyebrow">Voice</div>
+    <h2>Writing & Publishing</h2>
+    <div class="light-line"></div>
+    <p>Writing support helps learners and storytellers develop voice, memory, reflection, personal narrative, and pathways to publication.</p>
+    <p>This program exists because stories matter. Words can preserve truth, honor experience, heal memory, and help people understand themselves and one another.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-image"><img src="./mmf-journalism.png" alt="Journalism notebook and camera"></div>
+  <div>
+    <div class="eyebrow">Truth</div>
+    <h2>Journalism & Media</h2>
+    <div class="light-line"></div>
+    <p>Journalism and media programming supports responsible storytelling rooted in research, clarity, ethics, curiosity, and integrity.</p>
+    <p>Students learn that telling a story is a responsibility: to listen carefully, verify thoughtfully, and communicate with humanity.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-image"><img src="./mmf-filmmaking.png" alt="Filmmaking and creative production studio"></div>
+  <div>
+    <div class="eyebrow">Story to screen</div>
+    <h2>Filmmaking</h2>
+    <div class="light-line"></div>
+    <p>Filmmaking programming teaches the art and discipline of visual storytelling — from idea and interview to image, sound, editing, and audience.</p>
+    <p>The goal is to help young storytellers understand not only how to use tools, but how to honor the people and stories in front of them.</p>
+  </div>
+</section>
+
+<section class="program">
+  <div class="program-image"><img src="./mmf-community.png" alt="Community support and care"></div>
+  <div>
+    <div class="eyebrow">Care in action</div>
+    <h2>Community Support</h2>
+    <div class="light-line"></div>
+    <p>Community support provides practical, compassionate help guided by dignity, discretion, and love.</p>
+    <p>This work reflects one of Maryam’s clearest qualities: when someone needed help, she did not look away. She moved toward them.</p>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="content card">
+    <div class="eyebrow">Support the work</div>
+    <h2>Help build programs worthy of her name.</h2>
+    <div class="light-line"></div>
+    <p>Every contribution helps the Foundation grow its educational, creative, and service-based programs in Maryam’s honor.</p>
+    <a class="button primary" href="donate.html">Donate Now</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 The Maryam Mottaghi Foundation<br>
+  Created with reverence, service, and hope.
+</footer>
+
+</body>
+</html>
