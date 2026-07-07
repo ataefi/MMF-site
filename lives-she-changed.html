@@ -36,8 +36,8 @@ p{font-size:19px;line-height:1.85;color:var(--soft)}
 .hero-inner{max-width:820px}
 .quote{background:rgba(255,255,255,.72);border:1px solid var(--border);border-radius:34px;padding:58px;box-shadow:var(--shadow);text-align:center}
 .quote p{font-size:31px;line-height:1.55;color:#5B463A;margin:0}
-.exhibit{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;border-bottom:1px solid var(--border)}
-.exhibit:nth-child(even) .image-card{order:2}
+.story-section{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;border-bottom:1px solid var(--border)}
+.story-section:nth-child(even) .image-card{order:2}
 .image-card{background:white;border:1px solid var(--border);border-radius:34px;padding:16px;box-shadow:var(--shadow)}
 .image-card img{width:100%;height:540px;object-fit:cover;border-radius:24px;display:block}
 .story-card{background:rgba(255,255,255,.68);border:1px solid var(--border);border-radius:32px;padding:42px;box-shadow:0 18px 50px rgba(82,45,20,.08)}
@@ -49,8 +49,8 @@ footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);
 @media(max-width:980px){
   header{position:relative}
   nav a{display:inline-block;margin:8px 10px}
-  .exhibit{grid-template-columns:1fr}
-  .exhibit:nth-child(even) .image-card{order:0}
+  .story-section{grid-template-columns:1fr}
+  .story-section:nth-child(even) .image-card{order:0}
   .image-card img{height:auto}
   .quote{padding:36px}
 }
@@ -96,113 +96,133 @@ footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);
   </div>
 </section>
 
-<section class="exhibit">
+<section class="story-section">
   <div class="image-card">
     <img src="./maryam-portrait.jpg" alt="Maryam Mottaghi">
   </div>
   <div class="story-card">
-    <div class="eyebrow">Exhibit I</div>
-    <h2>She lived love in action.</h2>
+    <div class="eyebrow">The Woman Who Lived Love</div>
+    <h2>She did not speak about kindness. She lived it.</h2>
     <div class="light-line"></div>
-    <p>Maryam was not known by the world, but she was known by the people whose lives she quietly transformed. She did not speak about kindness. She lived it. She did not wait to be asked. She simply gave.</p>
-    <p>Her love was not partial, performative, or conditional. It was complete. It was practical. It fed people, protected people, comforted people, prayed for people, and made them feel safe.</p>
+    <p>Maryam was not known by the world, but she was known by the people whose lives she quietly transformed. She did not wait to be asked. She did not give only when it was convenient. She did not love halfway, conditionally, or only when someone had earned it.</p>
+    <p>She loved completely. She loved in action. If someone was hungry, she fed them. If someone was lonely, she noticed. If someone was sick, she prayed. If someone was afraid, she made them feel safe. If someone needed tenderness, she gave it freely.</p>
+    <p>That is why the stories of her life are not simply memories. They are evidence of what love can do when it is lived fully, quietly, faithfully, and without expectation.</p>
   </div>
 </section>
 
-<section class="exhibit">
+<section class="story-section">
   <div class="image-card">
     <img src="./mmf-orange-home.png" alt="Warm orange home inspired by Maryam’s legacy">
   </div>
   <div class="story-card">
-    <div class="eyebrow">Exhibit II</div>
-    <h2>The little girl who carried orange forward.</h2>
+    <div class="eyebrow">The Little Girl and the Fire</div>
+    <h2>The child who carried Maryam’s orange forward.</h2>
     <div class="light-line"></div>
-    <p>One day, a neighbor’s apartment caught fire. Inside were a three-year-old little girl and her grandmother, who had dementia. Maryam did not stop to think. She did not wait for help. She went into the burning home, carried the child out, and then went back in for the grandmother.</p>
-    <p>But what defined her was not only that moment of courage. Afterward, she brought them into her own home each day, cared for the grandmother gently, and loved the little girl as if she were her own.</p>
-    <p>More than thirty years later, that little girl found Maryam again. She said she had built her home, her colors, and even the smallest details around Maryam’s memory. There was a hint of orange in everything she owned because Maryam had filled her home with orange, warmth, color, and life.</p>
+    <p>One day, a neighbor’s apartment caught fire. Inside were a three-year-old little girl and her grandmother, who had dementia. Maryam did not stop to think. She did not wait for someone else to act. She did not ask if it was safe. While others stood frozen in shock, she went into the burning home.</p>
+    <p>She found the little girl crying and carried her out. Then, when the child said her grandmother was still inside, Maryam went back in — into the fire — to bring the grandmother out too.</p>
+    <p>That alone would have been heroism. But what defined Maryam was not only what she did in that moment. It was what she did after.</p>
+    <p>She had just given birth. She could have rested. She could have stepped back once the parents returned. Instead, she brought both the little girl and the grandmother into her own home. She told the parents that it was not safe for them to be left alone and that it would be no trouble at all to care for them during the day.</p>
+    <p>Each day, Maryam sat beside that grandmother and fed her gently, spoon by spoon, with a patience and tenderness that cannot be taught. She cared for the little girl as if she were her own, with so much love that the child no longer lived in fear, but in safety, warmth, and trust.</p>
+    <p>More than thirty years later, that same little girl found Maryam again. After years of searching, she finally found the woman she had never forgotten. She called Maryam in tears. She told her that she had kept Maryam’s picture as the screensaver on her computer. When her husband once asked why she had Maryam’s picture there instead of her own family, she explained that Maryam had shaped her life.</p>
+    <p>She said she had built her home, her colors, and even the smallest details around Maryam’s memory. There was a hint of orange in everything she owned because Maryam had filled her home with orange — with warmth, color, life, and love. She wanted to carry that with her forever, to have a piece of Maryam visible to everyone who entered her home.</p>
+    <p>That is who Maryam was. Not loud. Not seeking recognition. But leaving a mark so deep that it shaped a person’s home, heart, memory, and life decades later.</p>
   </div>
 </section>
 
-<section class="exhibit">
+<section class="story-section">
   <div class="image-card">
     <img src="./mmf-shared-meal.png" alt="A generous table set with Persian-inspired food">
   </div>
   <div class="story-card">
-    <div class="eyebrow">Exhibit III</div>
-    <h2>Enough food for one hundred people.</h2>
+    <div class="eyebrow">The Dinner That Looked Like a Wedding</div>
+    <h2>For two people or two hundred, she loved with the same fullness.</h2>
     <div class="light-line"></div>
-    <p>Maryam’s hospitality was never small. When Marvin and his new bride came over for what was meant to be a simple pā-goshā dinner, they looked at the table and panicked because they thought dozens of guests must be coming.</p>
-    <p>But the meal was only for them.</p>
-    <p>Maryam had cooked enough food for what looked like one hundred people, just in case someone else came by. Whether for two people or two hundred, she loved with the same fullness.</p>
+    <p>Maryam’s hospitality was never small because her love was never small.</p>
+    <p>When Marvin and his new bride came over for what was supposed to be a simple pā-goshā dinner, they walked in and saw the table. They panicked. The food, the care, the abundance, the preparation — it all looked as though dozens and dozens of guests must be coming.</p>
+    <p>But it was only for them.</p>
+    <p>Maryam had cooked enough food for what looked like one hundred people, just in case someone else came by. That was how she loved. She did not calculate generosity. She did not measure hospitality by the number of guests. She gave with fullness because her heart was full.</p>
+    <p>Whether someone came for a meal, a visit, comfort, celebration, prayer, or refuge, Maryam made them feel expected. She made them feel worthy. She made them feel that there was always room at her table.</p>
   </div>
 </section>
 
-<section class="exhibit">
+<section class="story-section">
   <div class="image-card">
     <img src="./mmf-prayer-light.png" alt="Prayer, candlelight, and orange rose in morning light">
   </div>
   <div class="story-card">
-    <div class="eyebrow">Exhibit IV</div>
-    <h2>Prayer as service.</h2>
+    <div class="eyebrow">The Prayers She Gave Away</div>
+    <h2>Her prayers were acts of service.</h2>
     <div class="light-line"></div>
-    <p>Maryam prayed constantly, but what made her prayers extraordinary was who she prayed for. She prayed for others — for their healing, protection, success, comfort, and peace.</p>
-    <p>For people in need, she would recite hundreds and hundreds of prayers, often spending entire days praying for someone else. Through her prayers, kindness, and love, so many people were uplifted, protected, comforted, and blessed.</p>
-    <p>Her faith was not separate from her life. It was present in every meal she prepared, every person she comforted, every sacrifice she made, and every soul she embraced.</p>
+    <p>Many people who knew Maryam knew that she prayed constantly. But what made her prayers extraordinary was not simply how often she prayed. It was who she prayed for.</p>
+    <p>Maryam prayed for others. Constantly. For each person in need, she would recite hundreds and hundreds of prayers, often spending entire days praying for someone else’s healing, success, comfort, protection, or peace.</p>
+    <p>She did not pray only for the people closest to her. She prayed for anyone who needed help. Family, friends, neighbors, strangers, children, the sick, the lonely, the struggling — if Maryam knew of someone’s pain, she carried it into prayer.</p>
+    <p>And somehow, those prayers carried power. Not because the people were always deserving. But because her soul was so pure. God listened to her.</p>
+    <p>Through her prayers, through her kindness, through her love, so many people were uplifted, protected, comforted, and blessed. Her faith was not separate from her life. It was woven into every meal she prepared, every sacrifice she made, every person she comforted, and every soul she embraced.</p>
   </div>
 </section>
 
-<section class="exhibit">
+<section class="story-section">
   <div class="image-card">
     <img src="./mmf-memory-letters.png" alt="Letters and memories in warm sunlight">
   </div>
   <div class="story-card">
-    <div class="eyebrow">Exhibit V</div>
-    <h2>The friends who found a mother in her.</h2>
+    <div class="eyebrow">The Friends Who Found a Mother</div>
+    <h2>Her kindness revealed what others had been missing.</h2>
     <div class="light-line"></div>
-    <p>During the teenage years, it became clear that many friends were not only drawn to Maryam’s children — they were drawn to Maryam herself.</p>
-    <p>One night, a friend staying over mentioned craving ice cream. Maryam immediately grabbed her bag and keys and said, “Let’s go,” insisting they choose their favorite flavors. When they returned home, the friend hugged Maryam in the kitchen and later explained that her own mother would never have shown such kindness.</p>
-    <p>Maryam’s small acts of care often revealed what others had been missing their entire lives.</p>
+    <p>During the teenage years, it became clear that many friends were not only drawn to Maryam’s children. They were drawn to Maryam herself. Her warmth filled the home in a way people could feel immediately.</p>
+    <p>One night, a friend staying over mentioned that she was craving ice cream. Maryam heard this and did not hesitate. She grabbed her bag and keys and said, “Let’s go,” insisting they go to the store and pick out their favorite flavors.</p>
+    <p>The friend protested that it was not necessary. But Maryam was already decided. To her, a child wanting ice cream was not an inconvenience. It was a chance to give joy.</p>
+    <p>When they returned home, Maryam went into the kitchen. The friend suddenly walked over and gave her a spontaneous bear hug. Maryam paused, dried her hands, and hugged her back.</p>
+    <p>Later, when asked about that moment, the friend explained that her own mother would never have shown such kindness. What may have seemed small to someone else was enormous to her. Maryam had offered tenderness where tenderness had been missing.</p>
+    <p>That was one of Maryam’s gifts. She made people feel mothered, even when they were not her children. She made people feel cared for in ways they had not even known they needed.</p>
   </div>
 </section>
 
-<section class="exhibit">
+<section class="story-section">
   <div class="image-card">
     <img src="./mmf-ripple-effect.png" alt="Golden ripples of light on water with orange flower">
   </div>
   <div class="story-card">
-    <div class="eyebrow">Exhibit VI</div>
-    <h2>The quiet ripple of kindness.</h2>
+    <div class="eyebrow">The Pizza at Costco</div>
+    <h2>For Maryam, kindness did not need an audience.</h2>
     <div class="light-line"></div>
-    <p>At Costco, Maryam once noticed a woman and her five children sharing a single slice of pizza and a hot dog. Without announcement or attention, she bought them an entire pizza.</p>
-    <p>For Maryam, it was simply another day of noticing someone in need. For the woman, it was profound. She later found Maryam, embraced her in tears, and thanked her for a kindness Maryam had offered quietly and without expectation.</p>
-    <p>That was how Maryam moved through the world: seeing need, responding with dignity, and leaving behind a ripple that continued long after the moment passed.</p>
+    <p>One day at Walmart, a woman and her children began following Maryam and her daughter. At first, it felt uncomfortable. The woman seemed to be watching them closely, trying to confirm something.</p>
+    <p>Finally, the woman approached and apologized. She explained that she had wanted to make sure it was truly Maryam before speaking.</p>
+    <p>A week earlier, the woman and her five children had been at Costco sharing a single slice of pizza and one hot dog. Without announcing herself, without making them feel embarrassed, and without expecting anything in return, Maryam had quietly purchased an entire pizza for them.</p>
+    <p>For Maryam, it was simply what one does when another person is in need. Since arriving in America, she had often noticed families and strangers in small moments of hardship and quietly offered what she could.</p>
+    <p>For that woman, the gesture had been profound. Tears filled her eyes as she embraced Maryam in gratitude. What Maryam had done casually, quietly, and without seeking recognition had changed the woman’s day in a way she never forgot.</p>
+    <p>Maryam’s kindness existed long before public performances of generosity became common. She did not help people for attention. She helped because love was written into the fabric of who she was.</p>
   </div>
 </section>
 
-<section class="exhibit">
+<section class="story-section">
   <div class="image-card">
-    <img src="maryam-laughing.jpg" alt="Maryam laughing">
+    <img src="./maryam-laughing.jpg" alt="Maryam laughing">
   </div>
   <div class="story-card">
-    <div class="eyebrow">Exhibit VII</div>
-    <h2>The warmth people remembered.</h2>
+    <div class="eyebrow">The Smile People Remembered</div>
+    <h2>Near her, people felt safe, seen, and loved.</h2>
     <div class="light-line"></div>
-    <p>Maryam had one of the warmest smiles God ever created. When people were near her, they felt safe. They felt seen. They felt loved.</p>
-    <p>She survived revolution, religious persecution, immigration, hardship, endless work, illness, and pain — and through all of it, she never became bitter. She remained gentle. She kept giving. She kept loving.</p>
+    <p>Maryam had one of the warmest smiles God ever created. Her smile could soften a room. Her laughter filled a home with warmth and joy. People were drawn to her, not because she demanded attention, but because when they were near her, they felt safe.</p>
+    <p>She survived revolution, religious persecution, immigration, hardship, endless work, illness, pain, and sacrifice. And through all of it, she never became bitter. She never stopped giving. She never stopped loving. She remained gentle through suffering.</p>
+    <p>That may be one of the greatest testimonies to who she truly was. Many people suffer. But not everyone remains gentle through suffering. Maryam did.</p>
+    <p>She gave of herself joyfully, with the love of God written into every act of service, every meal she prepared, every prayer she whispered, every sacrifice she made, every person she comforted, and every soul she embraced.</p>
   </div>
 </section>
 
-<section class="exhibit">
+<section class="story-section">
   <div class="image-card">
     <img src="./maryam-prayer-book.jpg" alt="Maryam’s prayer book">
   </div>
   <div class="story-card">
-    <div class="eyebrow">Exhibit VIII</div>
-    <h2>Light that continues beyond this world.</h2>
+    <div class="eyebrow">The Light That Continued</div>
+    <h2>Souls like hers do not disappear.</h2>
     <div class="light-line"></div>
     <p>In the Bahá’í Faith, light symbolizes spiritual illumination, guidance, love, and the eternal soul. For Maryam, light was not only a symbol. It was how she lived.</p>
-    <p>She spent her life bringing light to others. She served without expecting anything in return. She noticed people gently. She loved deeply. She gave freely.</p>
-    <p>And because souls like hers do not disappear, her love continues illuminating the lives of those she touched.</p>
+    <p>She spent her entire life bringing light to others. She sacrificed constantly — for her children, her family, her friends, strangers, and humanity. She served without expecting anything in return. She noticed people gently. She loved deeply. She gave freely.</p>
+    <p>Even after her passing, her love continued to feel present. The lights placed in her honor were not merely decoration. They were quiet prayers. They represented remembrance, spiritual illumination, and the belief that love does not end when the body is gone.</p>
+    <p>When respectful lights finally appeared at her resting place during the Feast of Núr — the Feast of Light — it felt like a sign of tenderness. It felt as though Maryam was being honored. It felt like God’s mercy. It felt like proof that love continues beyond this world.</p>
+    <p>That is why this archive exists. Because Maryam’s light still shines, and the people who were touched by her carry that light forward.</p>
   </div>
 </section>
 
