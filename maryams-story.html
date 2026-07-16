@@ -6,43 +6,44 @@
 <title>Maryam’s Story | The Maryam Mottaghi Foundation</title>
 
 <style>
-:root{
-  --ivory:#F9F6EF;--cream:#FFF9F2;--parchment:#F4EBDD;--linen:#FCFAF6;
-  --orange:#E67E3A;--saffron:#DFA343;--sunrise:#F2C15E;--apricot:#F5B584;
-  --ink:#2F2621;--soft:#76675F;--border:rgba(223,163,67,.25);
-  --shadow:0 24px 70px rgba(82,45,20,.12);
-}
+:root{--ivory:#F9F6EF;--cream:#FFF9F2;--parchment:#F4EBDD;--orange:#E67E3A;--saffron:#DFA343;--sunrise:#F2C15E;--ink:#2F2621;--soft:#76675F;--border:rgba(223,163,67,.25);--shadow:0 24px 70px rgba(82,45,20,.12)}
 *{box-sizing:border-box}
-body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:linear-gradient(180deg,var(--cream),var(--ivory) 45%,var(--parchment));}
-header{min-height:96px;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;background:rgba(255,249,242,.92);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);}
-.brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--ink)}
-.brand img{width:74px;height:74px;object-fit:contain}
-.brand-text strong{display:block;color:#B87922;letter-spacing:4px;text-transform:uppercase;font-size:17px}
-.brand-text span{color:var(--soft);font-size:13px;letter-spacing:2.5px;text-transform:uppercase}
-nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-size:15px;font-weight:bold}
-nav a.donate-nav{background:linear-gradient(135deg,var(--orange),var(--saffron));color:white;padding:13px 22px;border-radius:999px;box-shadow:0 12px 28px rgba(230,126,58,.24);}
-section{padding:90px 6vw}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:linear-gradient(180deg,var(--cream),var(--ivory) 45%,var(--parchment))}
+header{min-height:138px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px 6vw 18px;background:rgba(255,249,242,.94);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(14px)}
+.brand{display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;color:var(--ink);text-align:center}
+.brand img{width:72px;height:72px;object-fit:contain}
+.brand-text strong{display:block;color:#B87922;letter-spacing:5px;text-transform:uppercase;font-size:18px;font-weight:bold}
+.brand-text span{display:block;color:var(--soft);font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-top:6px}
+nav{margin-top:18px}
+nav a{color:var(--ink);text-decoration:none;margin:0 12px;font-size:15px;font-weight:bold}
+nav a.donate-nav{background:linear-gradient(135deg,var(--orange),var(--saffron));color:white;padding:13px 22px;border-radius:999px;box-shadow:0 12px 28px rgba(230,126,58,.24)}
+section{padding:95px 6vw}
 .content{max-width:1180px;margin:auto}
 .eyebrow{color:#A87827;letter-spacing:4px;text-transform:uppercase;font-weight:bold;font-size:14px;margin-bottom:18px}
 .light-line{width:120px;height:2px;margin:24px 0 34px;background:linear-gradient(90deg,transparent,var(--sunrise),var(--orange),var(--sunrise),transparent)}
 h1{font-size:clamp(56px,8vw,108px);line-height:.98;font-weight:400;color:var(--orange);margin:0 0 26px}
 h2{font-size:clamp(38px,5vw,68px);line-height:1.05;font-weight:400;color:var(--orange);margin:0}
-h3{font-size:28px;color:#B87922;font-weight:400;margin:0 0 14px}
-p,li{font-size:19px;line-height:1.8;color:var(--soft)}
-.hero{min-height:76vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(255,249,242,.96),rgba(255,249,242,.78),rgba(255,249,242,.36)),url("./maryam-pakistan.jpg");background-size:cover;background-position:center;border-bottom:1px solid var(--border)}
-.hero-inner{max-width:790px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.photo-card{background:white;border:1px solid var(--border);border-radius:34px;padding:18px;box-shadow:var(--shadow)}
-.photo-card img{width:100%;height:560px;object-fit:cover;border-radius:24px;display:block}
-.timeline{display:grid;gap:28px;margin-top:50px}
-.chapter{display:grid;grid-template-columns:180px 1fr;gap:34px;background:rgba(255,255,255,.72);border:1px solid var(--border);border-radius:30px;padding:34px;box-shadow:0 18px 50px rgba(82,45,20,.08)}
-.chapter .era{color:#A87827;letter-spacing:3px;text-transform:uppercase;font-weight:bold;font-size:14px}
+h3{font-size:30px;color:#B87922;font-weight:400;margin:0 0 14px}
+p{font-size:19px;line-height:1.85;color:var(--soft)}
+.hero{min-height:76vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(255,249,242,.97),rgba(255,249,242,.76),rgba(255,249,242,.30)),url("./maryam-portrait.jpg");background-size:cover;background-position:center;border-bottom:1px solid var(--border)}
+.hero-inner{max-width:850px}
 .quote{background:rgba(255,255,255,.72);border:1px solid var(--border);border-radius:34px;padding:58px;box-shadow:var(--shadow);text-align:center}
-.quote p{font-size:30px;line-height:1.55;color:#5B463A;margin:0}
-.values{background:linear-gradient(135deg,#FFF9F2,#F4EBDD);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.quote p{font-size:31px;line-height:1.55;color:#5B463A;margin:0}
+.story-section{display:grid;grid-template-columns:1fr 1.12fr;gap:64px;align-items:center;border-bottom:1px solid var(--border)}
+.story-section:nth-child(even) .image-card{order:2}
+.image-card{background:white;border:1px solid var(--border);border-radius:34px;padding:16px;box-shadow:var(--shadow)}
+.image-card img{width:100%;height:560px;object-fit:cover;border-radius:24px;display:block}
+.story-card{background:rgba(255,255,255,.70);border:1px solid var(--border);border-radius:32px;padding:42px;box-shadow:0 18px 50px rgba(82,45,20,.08)}
+.prayer-card{background:rgba(255,255,255,.78);border:1px solid var(--border);border-left:5px solid var(--saffron);border-radius:30px;padding:38px;box-shadow:var(--shadow);margin:26px 0}
+.prayer-symbol{display:block;width:88px;height:auto;margin:0 auto 24px;object-fit:contain}
+.prayer-card p{font-size:21px;color:#5B463A}
+.prayer-card strong{display:block;color:#A87827;margin-top:18px}
+.band{background:linear-gradient(135deg,#FFF9F2,#F4EBDD);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.gallery-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:38px}
+.gallery-row img{width:100%;height:330px;object-fit:cover;border-radius:26px;border:1px solid var(--border);box-shadow:0 18px 50px rgba(82,45,20,.08);background:white;padding:10px}
 .button{display:inline-block;text-decoration:none;border-radius:999px;padding:16px 28px;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:bold;border:1px solid var(--border);color:#A36B23;background:rgba(255,255,255,.58);margin-top:24px}
 footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);border-top:1px solid var(--border);letter-spacing:2px}
-@media(max-width:980px){header{display:block;text-align:center}.brand{justify-content:center}nav{margin-top:20px}nav a{display:inline-block;margin:8px 10px}.split,.chapter{grid-template-columns:1fr}.photo-card img{height:auto}}
+@media(max-width:980px){header{position:relative}nav a{display:inline-block;margin:8px 10px}.story-section{grid-template-columns:1fr}.story-section:nth-child(even) .image-card{order:0}.image-card img{height:auto}.quote{padding:36px}}
 </style>
 </head>
 
@@ -53,13 +54,15 @@ footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);
     <img src="./mmf-logo.png" alt="The Maryam Mottaghi Foundation logo">
     <div class="brand-text">
       <strong>The Maryam Mottaghi Foundation</strong>
-      <span>In memory. In service. In light.</span>
+      <span>In Memory • In Service • In Light</span>
     </div>
   </a>
+
   <nav>
     <a href="index.html">Home</a>
-    <a href="about-maryam.html">About Maryam</a>
     <a href="maryams-story.html">Her Story</a>
+    <a href="maryams-values.html">Maryam’s Values</a>
+    <a href="lives-she-changed.html">Lives She Changed</a>
     <a href="programs.html">Programs</a>
     <a href="gallery.html">Gallery</a>
     <a href="governance.html">Governance</a>
@@ -71,180 +74,191 @@ footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);
 <section class="hero">
   <div class="content hero-inner">
     <div class="eyebrow">Maryam’s Story</div>
-    <h1>How did she become Maryam?</h1>
+    <h1>Curiosity, courage, sacrifice, and service.</h1>
     <div class="light-line"></div>
-    <p>Maryam’s story is one of faith, courage, sacrifice, education, immigration, family, service, and love. Her life was not easy — but she remained gentle, giving, and full of light.</p>
+    <p>Maryam’s story is one of brilliance and resilience: a self-taught artist and teacher, a student and professional, a mother who rebuilt life across countries, and a devoted Bahá’í whose home and heart remained open to those in need.</p>
   </div>
 </section>
 
 <section>
   <div class="content quote">
-    <p>“A love like hers does not leave people empty.<br><br>It continues carrying them… even after a soul has gone home to God.”</p>
+    <p>A life that gave more than it ever asked to receive.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-young-girl.jpg" alt="Maryam as a young girl">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">Beginnings</div>
+    <h2>Maryam’s Celebration of Life</h2>
+    <div class="light-line"></div>
+    <p>Maryam Mottaghi entered the world on December 8, 1946, in Yazd, Iran, to Sayed Yahya Mottaghi and Zahra Mottaghi. Within her family constellation were two elder sisters, Bibi Rohbarb and Ashraf, along with a younger brother named Mohammad Agha. Although they all belonged to the Sayed lineage, Maryam, her parents, and her eldest sister embraced the Bahá’í faith.</p>
+    <p>From a young age, Maryam exhibited a natural curiosity and a profound desire to learn, teach, assist, and contribute to the well-being of those around her — be it friends, family, community members, or neighbors. Her thirst for knowledge was evident early on, as she eagerly delved into books, teaching herself until she had the opportunity to attend formal schooling.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-fashion-institute.jpg" alt="Maryam and her fashion institute">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">Fashion, creation, and teaching</div>
+    <h2>A self-taught prodigy in her craft.</h2>
+    <div class="light-line"></div>
+    <p>Maryam possessed a remarkable talent for sewing and fashion, entirely self-taught and hailed as a prodigy in her craft. Without the aid of patterns or formal training, her extraordinary skill transcended mere replication; she could effortlessly and flawlessly recreate designs simply by sight, often enhancing them to surpass the original, all without the need for measurements or guides.</p>
+    <p>Driven by her compassionate and generous spirit, Maryam bestowed her handmade creations upon family, friends, and even neighbors facing hardships. After completing high school, she established a government-recognized and accredited fashion institute. Taking on the roles of administrator, instructor, and diploma provider, she guided her students through rigorous training, ensuring their successful graduation. Upon completion, she diligently processed their diplomas, sending them to the state for official acknowledgment and endorsement.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-mehrabad-airport.jpg" alt="Maryam at Mehrabad Airport">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">Work, study, and respect</div>
+    <h2>Meteorology, business, and Mehrabad Airport.</h2>
+    <div class="light-line"></div>
+    <p>Amidst her commitments, Maryam pursued dual degrees in Meteorology and Business Management at the University of Tehran. Following graduation, she made the decision to sell her esteemed fashion institute and transitioned into a role as a meteorologist at Mehrabad International Airport.</p>
+    <p>In a testament to her versatility, she soon expanded her responsibilities to include work in the airport’s Human Resources department, seamlessly balancing both meteorology and HR duties. Throughout her career, Maryam was revered for her expertise, cherished for her warmth, and deeply respected by all who knew her.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-jamshid.jpg" alt="Maryam and Jamshid">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">Marriage and family</div>
+    <h2>Support, sacrifice, and courage through persecution.</h2>
+    <div class="light-line"></div>
+    <p>Following her marriage to Jamshid Taefi, Maryam played a pivotal role in their journey together. While providing unwavering support for their livelihood, she also encouraged Jamshid to pursue higher education. Thanks to her steadfast encouragement, Jamshid obtained a degree in accounting, eventually securing a position with the government in this field.</p>
+    <p>In the tumultuous aftermath of the revolution, Bahá’ís faced escalating persecution, enduring loss of livelihoods, resources, and even lives. When Maryam found herself among those who lost their jobs, her primary concern became supporting her family. Returning to her roots in sewing, she embarked on a journey of resilience, single-mindedly providing for her loved ones. Additionally, Maryam played a pivotal role in securing employment for Jamshid within her family’s network, demonstrating her unwavering determination and resourcefulness as they navigated through adversity together.</p>
   </div>
 </section>
 
 <section>
-  <div class="content split">
-    <div>
-      <div class="eyebrow">A life of becoming</div>
-      <h2>Maryam carried beauty through hardship.</h2>
-      <div class="light-line"></div>
-      <p>She lived through upheaval, sacrifice, migration, work, study, motherhood, service, illness, and loss — yet she never allowed suffering to make her bitter.</p>
-      <p>Instead, she became more tender. More prayerful. More generous. More devoted to the dignity of every soul who crossed her path.</p>
-    </div>
-
-    <div class="photo-card">
-      <img src="./maryam-portrait.jpg" alt="Maryam Mottaghi">
+  <div class="content">
+    <div class="gallery-row">
+      <img src="./maryam-jamshid.jpg" alt="Maryam and Jamshid">
+      <img src="./maryam-arash.jpg" alt="Maryam and Arash">
+      <img src="./maryam-azadeh.jpg" alt="Maryam and Azadeh">
     </div>
   </div>
 </section>
 
-<section class="values">
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-azadeh.jpg" alt="Maryam and Azadeh">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">A mother’s choice</div>
+    <h2>She chose her children, time and time again.</h2>
+    <div class="light-line"></div>
+    <p>Maryam is the proud mother of two children, Arash and Azadeh. Before the revolution, Arash was already attending school. However, when it was time for Azadeh to enroll in kindergarten after the revolution, Maryam faced formidable challenges. Despite her tireless efforts to secure Azadeh’s enrollment, every application form posed the same obstacle: it required disclosure of the child’s religion. Upon revealing their Bahá’í faith, they were unjustly denied admission and instructed to leave, leaving Maryam grappling with discrimination and the denial of her daughter’s right to education.</p>
+    <p>Recognizing the bleak prospects for her children’s future in Iran, Maryam made a bold and selfless choice: to forsake everything and everyone she knew, all in pursuit of a better life for her young family. She took decisive action, liquidating her possessions and parting with cherished jewelry to finance their escape from Iran, determined to provide her children with the opportunity for a brighter future elsewhere.</p>
+    <p>Maryam’s unwavering courage and resilience were the bedrock upon which her family relied. Throughout their lives, her indomitable spirit served as a guiding light, particularly during their perilous escape. Despite the daunting and intense nature of their journey, Maryam remained a beacon of strength, comforting her loved ones and reframing their ordeal as an adventure rather than a dire necessity for survival. Her fearless demeanor and unwavering optimism helped carry them through the darkest of times.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-pakistan.jpg" alt="Maryam in Pakistan">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">Pakistan</div>
+    <h2>Sacrifice and a new beginning.</h2>
+    <div class="light-line"></div>
+    <p>Over the course of four days and five nights, Maryam and her family trailed behind smugglers on their arduous journey from Iran to the border of Pakistan. Amidst the challenges of the trip, when the smugglers attempted to extort more money, Maryam demonstrated remarkable courage. Fearlessly confronting the smugglers, she refused to yield, insisting they return to retrieve her husband and daughter, who had been left behind during the previous rest period. Her resolute determination ensured the safety and unity of her family amidst the perilous passage.</p>
+    <p>Upon their arrival in Pakistan, Maryam wasted no time in taking action. With the funds she had managed to save through her sacrifices, she secured a home for her family and immediately began sewing to provide for their basic needs. Despite the demands of earning a living, Maryam also took on the responsibility of homeschooling her son and daughter. In addition to these duties, she remained actively engaged in Bahá’í activities at the Lahore Bahá’í Center, offering her assistance and support to fellow Bahá’ís, especially the young ones in need. Maryam’s unwavering dedication to her family and community showcased her remarkable strength and resilience.</p>
+    <p>Maryam’s nurturing instinct extended beyond her immediate family. She frequently assumed a maternal role for young adults in her community, offering care and support, especially during times of illness or hardship. Without hesitation, she opened her home to those in need, providing comfort and assistance to individuals who were unable to care for themselves after serious illnesses. Maryam’s unwavering devotion to serving others exemplified the essence of true Bahá’í faith, reflecting her boundless love and selflessness as a servant of the divine.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-arriving-america.jpg" alt="Maryam arriving in America">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">America</div>
+    <h2>Work, night school, and the courage to begin again.</h2>
+    <div class="light-line"></div>
+    <p>In 1987, after 14 months of relentless sacrifice, their perseverance paid off when they finally received sponsorship to immigrate to America. Within days of their arrival, Maryam wasted no time in securing multiple jobs to provide for her family.</p>
+    <p>Not content to settle, she also enrolled herself in night school, driven to enhance her communication skills and kickstart her career in her new home, all while continuing to shoulder the sole responsibility of supporting her family. Her unwavering determination and work ethic were evident as she embarked on this new chapter of her life in America.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-csula-graduation.jpg" alt="Maryam at CSULA graduation">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">Education and achievement</div>
+    <h2>Technology, teaching, and family devotion.</h2>
+    <div class="light-line"></div>
+    <p>During her quest to find a fashion institute in Pasadena, Maryam found herself intrigued by signs advertising computer classes, she decided to explore further. Before she knew it, she had enrolled herself in Pasadena City College. Instead of opting for the known and familiar, Maryam chose to challenge herself and embark on a completely new career path. While enrolled in computer science courses, she simultaneously supported both herself and her family by working in the college’s Human Resources department. Her willingness to embrace change and her dedication to self-improvement were evident as she navigated this new chapter in her life.</p>
+    <p>After a period of time, Maryam transferred to California State University, Los Angeles, where she continued her studies in both Computer Information Systems and Technology. In 1998, she achieved a significant milestone by graduating from California State University, Los Angeles, with a double degree. Shortly thereafter, she embarked on a new chapter in her career by transitioning into a teaching role, sharing her expertise in the very courses she had once taken herself.</p>
+    <p>Maryam dedicated herself to academia as a professor at the university until a significant event changed her course. Upon the birth of her granddaughter and her son’s relocation to California, she made the selfless decision to prioritize family. With her son’s young family moving in with her, Maryam wholeheartedly devoted herself to their care. Sacrificing her career, she became the sole provider and caregiver for her granddaughter, ensuring her well-being and nurturing her development. Maryam’s tireless efforts bore fruit as her granddaughter flourished, achieving accolades in high school and later in college, a testament to Maryam’s unwavering love and support.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-bahai-gathering.jpg" alt="Maryam at a Bahá’í gathering">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">Faith and service</div>
+    <h2>Devotion, prayer, and eternal love.</h2>
+    <div class="light-line"></div>
+    <p>Amidst her busy and fulfilling life, Maryam remained steadfast in her devotion to the teachings of Bahá’u’lláh. Without falter, she hosted Bahá’í deepening classes in her home every week, while also serving on the Local Spiritual Assembly and offering support to other communities and firesides. As the years progressed and Ruhi classes were introduced, Maryam enthusiastically opened her home to host each book study session and every assembly gathering and feast. Her commitment to her faith never wavered, and she remained a proud and active Bahá’í until the very end of her life.</p>
+    <p>Maryam’s compassionate spirit endeared her to many, and she was a source of love and support for all who crossed her path. Whether it was family, friends, neighbors, or coworkers facing hardships, they could always rely on her unwavering love and prayers. Maryam selflessly recited 500 “Is there any remover of difficulty?” prayers for each person in need, fervently praying for their healing, success, or thriving, depending on their specific needs. Her generosity of spirit and boundless love infused each prayer, offered willingly and with a heart brimming with compassion and vitality.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="image-card">
+    <img src="./maryam-prayer-book.jpg" alt="Maryam’s prayer book">
+  </div>
+  <div class="story-card">
+    <div class="eyebrow">Final earthly chapter</div>
+    <h2>A life of grace, passion, courage, and love.</h2>
+    <div class="light-line"></div>
+    <p>Just as Maryam reached a point in her life where she could finally take a well-deserved rest and focus on her own well-being, her health began to decline. The accumulated stresses and sacrifices of a lifetime caught up with her, taking a toll on her physical well-being.</p>
+    <p>As Maryam’s health declined, she received the devastating diagnosis of pancreatic cancer, which had already spread to her liver, lungs, intestines, and kidneys. Despite her courageous and unwavering fight, she eventually succumbed to the illness, departing for the Abha Kingdom on May 15, 2024. Her departure left countless hearts shattered, but she now rests in the embrace of the Almighty, surrounded by His grace and at peace.</p>
+    <p>Maryam Mottaghi lived her life with grace, passion, courage, fierce determination, deep love, and abiding dedication to others, and gave of herself joyfully, with the love of God written in her heart. May God perpetually safeguard this angel, granting her eternal happiness, health, and peace in the celestial paradise she now calls home.</p>
+  </div>
+</section>
+
+<section class="band">
   <div class="content">
-    <div class="eyebrow">Timeline</div>
-    <h2>The chapters of a luminous life.</h2>
+    <div class="eyebrow">Bahá’í Prayers</div>
+    <h2>In remembrance, prayer, and light.</h2>
     <div class="light-line"></div>
 
-    <div class="timeline">
+    <div class="prayer-card">
+      <img class="prayer-symbol" src="./greatest-name.png" alt="Bahá’í Greatest Name">
+      <p>“O my God, Thy Trust hath been returned unto Thee. It behooveth Thy grace and Thy bounty that have compassed Thy dominions on earth and in heaven, to vouchsafe unto Thy newly welcomed one Thy gifts and Thy bestowals, and the fruits of the tree of Thy grace! Powerful art Thou to do as Thou willest, there is none other God but Thee, the Gracious, the Most Bountiful, the Compassionate, the Bestower, the Pardoner, the Precious, the All-Knowing.”</p>
+      <strong>Bahá’u’lláh</strong>
+    </div>
 
-      <div class="chapter">
-        <div class="era">Iran</div>
-        <div>
-          <h3>Roots, faith, and early gifts</h3>
-          <p>Maryam’s early life formed the foundation of her character: devotion to family, love of beauty, reverence for education, and a deep spiritual sensitivity that shaped everything she later became.</p>
-        </div>
-      </div>
+    <div class="prayer-card">
+      <img class="prayer-symbol" src="./nine-point-star.png" alt="Nine-pointed star">
+      <p>“O Thou Kind Lord! This dearly cherished maidservant was attracted to Thee, and through reflection and discernment longed to attain Thy presence and enter Thy realms. With tearful eyes she fixed her gaze on the Kingdom of Mysteries. Many a night she spent in deep communion with Thee, and many a day she lived in intimate remembrance of Thee.”</p>
+      <strong>‘Abdu’l-Bahá</strong>
+    </div>
 
-      <div class="chapter">
-        <div class="era">Fashion & Creation</div>
-        <div>
-          <h3>A natural artist and teacher</h3>
-          <p>Maryam had an extraordinary gift for fashion, sewing, design, and creation. She did not simply make beautiful things — she taught, encouraged, and helped others see what was possible.</p>
-        </div>
-      </div>
-
-      <div class="chapter">
-        <div class="era">Work & Study</div>
-        <div>
-          <h3>Intelligence, discipline, and perseverance</h3>
-          <p>Throughout her life, Maryam kept learning. She studied, worked, adapted, and grew, even when circumstances demanded more from her than most people could bear.</p>
-        </div>
-      </div>
-
-      <div class="chapter">
-        <div class="era">Revolution & Departure</div>
-        <div>
-          <h3>Courage through uncertainty</h3>
-          <p>Maryam endured revolution, religious persecution, and the pain of leaving behind a homeland and people she loved. She carried that loss quietly, but never allowed it to harden her heart.</p>
-        </div>
-      </div>
-
-      <div class="chapter">
-        <div class="era">Pakistan</div>
-        <div>
-          <h3>A chapter of transition and sacrifice</h3>
-          <p>During a difficult and uncertain period, Maryam continued to protect, serve, and love her family with the same devotion that defined her entire life.</p>
-        </div>
-      </div>
-
-      <div class="chapter">
-        <div class="era">America</div>
-        <div>
-          <h3>Building a new life</h3>
-          <p>Maryam came to the United States seeking freedom, opportunity, and a better future for her children. She worked tirelessly, carried her family, and gave more than anyone fully understood.</p>
-        </div>
-      </div>
-
-      <div class="chapter">
-        <div class="era">Education</div>
-        <div>
-          <h3>Learning as dignity</h3>
-          <p>Maryam believed in education not as status, but as transformation. Her commitment to learning continues through the Foundation’s scholarship, mentorship, and educational programs.</p>
-        </div>
-      </div>
-
-      <div class="chapter">
-        <div class="era">Service</div>
-        <div>
-          <h3>A home where people felt safe</h3>
-          <p>Maryam fed people, prayed for people, welcomed people, comforted people, and noticed needs before they were spoken. Her home was not just a place. It was a refuge.</p>
-        </div>
-      </div>
-
-      <div class="chapter">
-        <div class="era">Legacy</div>
-        <div>
-          <h3>Love that continues</h3>
-          <p>The Maryam Mottaghi Foundation exists so that her love continues moving outward — through education, service, mentorship, creativity, compassion, and hope.</p>
-        </div>
-      </div>
-
+    <div class="prayer-card">
+      <img class="prayer-symbol" src="./nine-point-star.png" alt="Nine-pointed star">
+      <p>“O my God, O Forgiver of sins and Dispeller of afflictions! O Thou Who art the Pardoner, the Merciful! I raise my suppliant hands to Thee, tearfully beseeching the court of Thy divine Essence to forgive, through Thy grace and clemency, Thy handmaiden who hath ascended unto the seat of truth.”</p>
+      <strong>‘Abdu’l-Bahá</strong>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="content split">
-    <div class="photo-card">
-      <img src="./maryam-graduation.jpg" alt="Maryam Mottaghi graduation memory">
-    </div>
-
-    <div>
-      <div class="eyebrow">Education</div>
-      <h2>She believed people could rise.</h2>
-      <div class="light-line"></div>
-      <p>Maryam’s life teaches that education is not only about degrees. It is about dignity, courage, access, confidence, and the chance to become more fully oneself.</p>
-      <p>That belief lives at the heart of the Foundation.</p>
-      <a class="button" href="programs.html">Explore Programs</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="content split">
-    <div>
-      <div class="eyebrow">Family</div>
-      <h2>She loved without keeping score.</h2>
-      <div class="light-line"></div>
-      <p>Maryam’s love was not conditional. It did not wait until someone deserved it. It was steady, generous, forgiving, and full.</p>
-      <p>She loved with the kind of tenderness that becomes a person’s compass long after they are gone.</p>
-    </div>
-
-    <div class="photo-card">
-      <img src="./maryam-parents.jpg" alt="Maryam Mottaghi family memory">
-    </div>
-  </div>
-</section>
-
-<section class="values">
-  <div class="content split">
-    <div class="photo-card">
-      <img src="./maryam-jamshid.jpg" alt="Maryam Mottaghi life memory">
-    </div>
-
-    <div>
-      <div class="eyebrow">Her light</div>
-      <h2>She is not gone from the work.</h2>
-      <div class="light-line"></div>
-      <p>Every act of service, every scholarship, every mentorship, every meal, every story, every moment of care offered through this Foundation is a continuation of her light.</p>
-      <a class="button" href="maryams-values.html">Maryam’s Values</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="content split">
-    <div>
-      <div class="eyebrow">Remembering</div>
-      <h2>Her story will continue to grow.</h2>
-      <div class="light-line"></div>
-      <p>This page can grow over time with photographs, memories, prayers, milestones, and stories from those who knew and loved Maryam.</p>
-      <a class="button" href="gallery.html">View Gallery</a>
-    </div>
-
-    <div class="photo-card">
-      <img src="./maryam-orchid.jpg" alt="Maryam Mottaghi memory">
-    </div>
+  <div class="content quote">
+    <p>Built in memory, sustained through love.</p>
   </div>
 </section>
 
