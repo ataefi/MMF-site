@@ -31,8 +31,28 @@ p{font-size:19px;line-height:1.85;color:var(--soft)}
 .quote p{font-size:31px;line-height:1.55;color:#5B463A;margin:0}
 .story-section{display:grid;grid-template-columns:1fr 1.12fr;gap:64px;align-items:center;border-bottom:1px solid var(--border)}
 .story-section:nth-child(even) .image-card{order:2}
-.image-card{background:white;border:1px solid var(--border);border-radius:34px;padding:16px;box-shadow:var(--shadow)}
-.image-card img{width:100%;height:560px;object-fit:cover;border-radius:24px;display:block}
+.image-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:34px;
+  padding:16px;
+  box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.image-card img{
+  width:100%;
+  height:560px;
+  object-fit:contain;
+  object-position:center center;
+  border-radius:24px;
+  display:block;
+  margin:0 auto;
+  background:#fff;
+}
 .story-card{background:rgba(255,255,255,.70);border:1px solid var(--border);border-radius:32px;padding:42px;box-shadow:0 18px 50px rgba(82,45,20,.08)}
 .prayer-card{background:rgba(255,255,255,.78);border:1px solid var(--border);border-left:5px solid var(--saffron);border-radius:30px;padding:38px;box-shadow:var(--shadow);margin:26px 0}
 .prayer-symbol{display:block;width:88px;height:auto;margin:0 auto 24px;object-fit:contain}
@@ -40,8 +60,62 @@ p{font-size:19px;line-height:1.85;color:var(--soft)}
 .prayer-card strong{display:block;color:#A87827;margin-top:18px}
 .band{background:linear-gradient(135deg,#FFF9F2,#F4EBDD);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .gallery-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:38px}
-.gallery-row img{width:100%;height:330px;object-fit:cover;border-radius:26px;border:1px solid var(--border);box-shadow:0 18px 50px rgba(82,45,20,.08);background:white;padding:10px}
+.gallery-row img{
+  width:100%;
+  height:330px;
+  object-fit:contain;
+  object-position:center center;
+  border-radius:26px;
+  border:1px solid var(--border);
+  box-shadow:0 18px 50px rgba(82,45,20,.08);
+  background:white;
+  padding:10px;
+  display:block;
+  margin:0 auto;
+}
 .button{display:inline-block;text-decoration:none;border-radius:999px;padding:16px 28px;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-weight:bold;border:1px solid var(--border);color:#A36B23;background:rgba(255,255,255,.58);margin-top:24px}
+.story-continuation{
+  padding:140px 6vw;
+  text-align:center;
+  background:
+    radial-gradient(circle at center,rgba(242,193,94,.25),transparent 34%),
+    linear-gradient(180deg,#FFF9F2,#F4EBDD);
+  border-top:1px solid var(--border);
+}
+
+.continuation-line{
+  margin:0;
+  color:#8C6B55;
+  font-size:clamp(30px,4vw,52px);
+  line-height:1.3;
+  font-style:italic;
+}
+
+.continuation-light{
+  width:170px;
+  height:2px;
+  margin:34px auto;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--sunrise),
+    var(--orange),
+    var(--sunrise),
+    transparent
+  );
+  box-shadow:0 0 26px rgba(242,193,94,.65);
+}
+
+.continuation-answer{
+  margin:0;
+  color:var(--orange);
+  font-size:clamp(42px,6vw,76px);
+  line-height:1.1;
+}
+
+.continuation-button{
+  margin-top:48px;
+}
 footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);border-top:1px solid var(--border);letter-spacing:2px}
 @media(max-width:980px){header{position:relative}nav a{display:inline-block;margin:8px 10px}.story-section{grid-template-columns:1fr}.story-section:nth-child(even) .image-card{order:0}.image-card img{height:auto}.quote{padding:36px}}
 </style>
@@ -202,7 +276,19 @@ footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);
     <p>Maryam dedicated herself to academia as a professor at the university until a significant event changed her course. Upon the birth of her granddaughter and her son’s relocation to California, she made the selfless decision to prioritize family. With her son’s young family moving in with her, Maryam wholeheartedly devoted herself to their care. Sacrificing her career, she became the sole provider and caregiver for her granddaughter, ensuring her well-being and nurturing her development. Maryam’s tireless efforts bore fruit as her granddaughter flourished, achieving accolades in high school and later in college, a testament to Maryam’s unwavering love and support.</p>
   </div>
 </section>
+<section>
+  <div class="content">
+    <div class="eyebrow">Her greatest devotion</div>
+    <h2>Love carried into another generation.</h2>
+    <div class="light-line"></div>
 
+    <div class="gallery-row">
+      <img src="./maryam-emily.jpg" alt="Maryam with her granddaughter Emily">
+      <img src="./maryam-christopher.jpg" alt="Maryam with her grandson Christopher">
+      <img src="./maryam-grandchildren.jpg" alt="Maryam with her grandchildren">
+    </div>
+  </div>
+</section>
 <section class="story-section">
   <div class="image-card">
     <img src="./maryam-bahai-gathering.jpg" alt="Maryam at a Bahá’í gathering">
@@ -237,7 +323,7 @@ footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);
     <div class="light-line"></div>
 
     <div class="prayer-card">
-      <img class="prayer-symbol" src="./greatest-name.png" alt="Bahá’í Greatest Name">
+     <img class="prayer-symbol" src="./bahai-symbol.jpg" alt="Bahá’í Greatest Name">
       <p>“O my God, Thy Trust hath been returned unto Thee. It behooveth Thy grace and Thy bounty that have compassed Thy dominions on earth and in heaven, to vouchsafe unto Thy newly welcomed one Thy gifts and Thy bestowals, and the fruits of the tree of Thy grace! Powerful art Thou to do as Thou willest, there is none other God but Thee, the Gracious, the Most Bountiful, the Compassionate, the Bestower, the Pardoner, the Precious, the All-Knowing.”</p>
       <strong>Bahá’u’lláh</strong>
     </div>
@@ -249,7 +335,7 @@ footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);
     </div>
 
     <div class="prayer-card">
-      <img class="prayer-symbol" src="./nine-point-star.png" alt="Nine-pointed star">
+     <img class="prayer-symbol" src="./bahai-symbol.jpg" alt="Bahá’í sacred symbol">
       <p>“O my God, O Forgiver of sins and Dispeller of afflictions! O Thou Who art the Pardoner, the Merciful! I raise my suppliant hands to Thee, tearfully beseeching the court of Thy divine Essence to forgive, through Thy grace and clemency, Thy handmaiden who hath ascended unto the seat of truth.”</p>
       <strong>‘Abdu’l-Bahá</strong>
     </div>
@@ -259,6 +345,19 @@ footer{text-align:center;padding:58px 6vw;color:#A87827;background:var(--cream);
 <section>
   <div class="content quote">
     <p>Built in memory, sustained through love.</p>
+  </div>
+</section>
+
+<section class="story-continuation">
+  <div class="content">
+    <p class="continuation-line">Her story continues...</p>
+    <div class="continuation-light"></div>
+    <p class="continuation-answer">...through yours.</p>
+
+    <a class="button continuation-button"
+       href="mailto:themaryammottaghifoundation@gmail.com?subject=My%20Memory%20of%20Maryam%20Mottaghi">
+       Share a Memory of Maryam
+    </a>
   </div>
 </section>
 
