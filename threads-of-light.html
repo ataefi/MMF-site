@@ -1,18 +1,218 @@
+
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Threads of Light, an independent Bahá’í inspired publication sharing stories, learning, and service across the cluster."><title>Threads of Light | The Maryam Mottaghi Foundation</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Threads of Light, an independent Bahá’í inspired publication sharing stories, learning, and service across the clusters.">
+<title>Threads of Light | The Maryam Mottaghi Foundation</title>
 <style>
-:root{--navy:#142c46;--gold:#cba34b;--ivory:#f8f5ed;--ink:#24384a}*{box-sizing:border-box}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}a{color:var(--navy)}.sitebar{background:#fffaf2;padding:14px clamp(20px,5vw,70px);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;border-bottom:1px solid #e9dfc8}.sitebar a{text-decoration:none;font-weight:bold}.sitebar .foundation{color:#98651c}.sitebar nav{display:flex;flex-wrap:wrap;gap:18px}.wrap{max-width:1040px;margin:auto;padding:0 22px}.masthead{width:100%;max-width:1000px;display:block;margin:48px auto 20px}.intro{text-align:center;max-width:780px;margin:0 auto 48px}.eyebrow{letter-spacing:.18em;color:#8e6d2b;font:700 13px Arial,sans-serif;text-transform:uppercase}.intro h1{font-size:clamp(30px,4.5vw,54px);color:var(--navy);line-height:1.15;margin:12px 0}.intro p{font-size:19px}.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:26px 0}.button{background:var(--navy);color:white;text-decoration:none;border-radius:6px;padding:13px 22px;font:700 15px Arial,sans-serif}.button.gold{background:#b88932;color:white}.section{padding:38px 0;border-top:1px solid #e4d8c0}.section h2{font-size:32px;color:var(--navy);margin:0 0 12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}.card{background:white;border:1px solid #e9dfcc;border-radius:12px;padding:25px;box-shadow:0 8px 26px #142c460b}.card p{margin-top:0}.qr{display:block;max-width:260px;width:100%;margin:20px auto}.small{font:14px/1.6 Arial,sans-serif;color:#596473}.archive{padding:26px;border:1px dashed #c9b98f;border-radius:8px;background:#fffdf9}footer{text-align:center;padding:36px 18px;background:var(--navy);color:white;font-size:14px}footer a{color:#fff} @media(max-width:700px){.two{grid-template-columns:1fr}.masthead{margin-top:24px}.sitebar{justify-content:center;text-align:center}}
-</style></head><body>
-<header class="sitebar"><a class="foundation" href="index.html" target="_blank" rel="noopener noreferrer">← The Maryam Mottaghi Foundation</a><nav aria-label="Site navigation"><a href="index.html" target="_blank" rel="noopener noreferrer">Home</a><a href="programs.html" target="_blank" rel="noopener noreferrer">Programs</a><a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a></nav></header>
+:root {
+  --navy:#142c46;
+  --gold:#cba34b;
+  --ivory:#f8f5ed;
+  --ink:#24384a;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.65;
+}
+a {color:var(--navy)}
+a:focus-visible {outline:3px solid var(--gold);outline-offset:3px}
+.sitebar {
+  background:#fffaf2;
+  padding:14px clamp(20px,5vw,70px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  border-bottom:1px solid #e9dfc8;
+}
+.sitebar a {text-decoration:none;font-weight:bold}
+.sitebar .foundation {color:#98651c}
+.sitebar nav {display:flex;flex-wrap:wrap;gap:18px}
+.wrap {max-width:1040px;margin:auto;padding:0 22px}
+.masthead {
+  width:100%;
+  max-width:1000px;
+  display:block;
+  margin:48px auto 20px;
+}
+.intro {text-align:center;max-width:780px;margin:0 auto 48px}
+.eyebrow {
+  letter-spacing:.18em;
+  color:#8e6d2b;
+  font:700 13px Arial,sans-serif;
+  text-transform:uppercase;
+}
+.intro h1 {
+  font-size:clamp(30px,4.5vw,54px);
+  color:var(--navy);
+  line-height:1.15;
+  margin:12px 0;
+}
+.intro p {font-size:19px}
+.actions {
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:26px 0;
+}
+.button {
+  display:inline-block;
+  background:var(--navy);
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  padding:13px 22px;
+  font:700 15px Arial,sans-serif;
+}
+.button.gold {background:#a77720;color:white}
+.button:hover {filter:brightness(1.12)}
+.section {padding:38px 0;border-top:1px solid #e4d8c0}
+.section h2 {font-size:32px;color:var(--navy);margin:0 0 12px}
+.two {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:34px;
+  align-items:start;
+}
+.card {
+  background:white;
+  border:1px solid #e9dfcc;
+  border-radius:12px;
+  padding:25px;
+  box-shadow:0 8px 26px #142c460b;
+}
+.card p {margin-top:0}
+.qr {display:block;max-width:260px;width:100%;margin:20px auto}
+.small {font:14px/1.6 Arial,sans-serif;color:#596473}
+.archive {
+  padding:26px;
+  border:1px solid #c9b98f;
+  border-radius:8px;
+  background:#fffdf9;
+}
+.resource {
+  margin:14px 0;
+  padding:16px 18px;
+  border-left:3px solid var(--gold);
+  background:#fffdf9;
+}
+.resource h3 {margin:0 0 5px;color:var(--navy)}
+.resource p {margin:0 0 10px}
+.resource a {font-weight:bold}
+footer {
+  text-align:center;
+  padding:36px 18px;
+  background:var(--navy);
+  color:white;
+  font-size:14px;
+}
+footer a {color:#fff}
+@media(max-width:700px) {
+  .two {grid-template-columns:1fr}
+  .masthead {margin-top:24px}
+  .sitebar {justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+<header class="sitebar">
+  <a class="foundation" href="index.html" target="_blank" rel="noopener noreferrer">← The Maryam Mottaghi Foundation</a>
+  <nav aria-label="Site navigation">
+    <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>
+    <a href="programs.html" target="_blank" rel="noopener noreferrer">Programs</a>
+    <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+  </nav>
+</header>
+
 <main class="wrap">
-<img class="masthead" src="threads-of-light-masthead.png" alt="Threads of Light. Stories, Learning, Service Across the Cluster">
-<section class="intro"><div class="eyebrow">An independent Bahá’í inspired digital publication</div><h1>A Little Light Travels Far</h1><p>Discover the stories, experiences, reflections, and acts of service connecting our communities. Published once each Bahá’í month, <em>Threads of Light</em> celebrates meaningful efforts, shared learning, and the connections that bring us closer together.</p><div class="actions"><a class="button gold" href="https://threads-of-light-gspstp.subscribepage.io" target="_blank" rel="noopener noreferrer">Subscribe to New Issues</a><a class="button" href="#contribute">Share Your Story</a></div><p class="small">Inaugural issue planned for November 4, 2026, the Feast of Qudrat.</p></section>
-<section class="section two" id="subscribe"><div><h2>Receive Threads of Light</h2><p>Sign up to receive each issue by email. Subscription is free and voluntary, and you may unsubscribe at any time using the link in our emails.</p><p><a class="button gold" href="https://threads-of-light-gspstp.subscribepage.io" target="_blank" rel="noopener noreferrer">Subscribe</a></p></div><div class="card"><img class="qr" src="threads-of-light-subscribe.jpg" alt="Subscription card with QR code for Threads of Light"><p class="small" style="text-align:center">Scan the code or use the subscription link above.</p></div></section>
-<section class="section" id="contribute"><h2>Share Your Story</h2><p>We welcome community stories, reflections, experiences, initiatives, and acts of service. You do not need to write a polished article. Tell us what happened, who was involved, when and where, and why the experience mattered. We may follow up to clarify details or request permission for photos or quotations.</p><div class="card"><h3>Send a contribution</h3><p>Email your story to <a href="mailto:threadsoflightnews@gmail.com?subject=Threads%20of%20Light%20Story%20Submission">threadsoflightnews@gmail.com</a>.</p>
-<p>You may also submit your story using our online submission form.</p>
-<p><a class="button" href="https://forms.gle/UTMGm5pzWK1a7t4W9" target="_blank" rel="noopener noreferrer">Share Your Story Online</a></p>
-<p class="small">The form opens in a new tab. You do not need to write a polished article, and you may request that your name be withheld from publication. Submissions are reviewed privately by the editorial team.</p>
-</div></section>
-<section class="section" id="issues"><h2>Current and Past Issues</h2><div class="archive"><strong>Our inaugural issue is on its way.</strong><p>Planned release: November 4, 2026. Once published, issues will be accessible here.</p></div></section>
-<section class="section"><h2>About This Initiative</h2><p><em>Threads of Light</em> is independently edited and inspired by the spirit of learning, service, and friendship. This page is hosted by The Maryam Mottaghi Foundation during the publication’s initial pilot period. The publication is not an official communication of the Bahá’í institutions.</p><p class="small">Subscriber information is managed through our email delivery service. Story submissions are reviewed by the editorial team, and submission does not guarantee publication. Please do not submit private information about others without their permission.</p></section>
-</main><footer>Threads of Light · Stories • Learning • Service Across the Cluster<br><a href="mailto:threadsoflightnews@gmail.com">threadsoflightnews@gmail.com</a><br><a href="index.html" target="_blank" rel="noopener noreferrer">The Maryam Mottaghi Foundation</a></footer></body></html>
+<img class="masthead" src="threads-of-light-masthead.png" alt="Threads of Light. Stories, Learning, Service Across the Clusters">
+
+<section class="intro">
+  <div class="eyebrow">An independent Bahá’í inspired digital publication</div>
+  <h1>A Little Light Travels Far</h1>
+  <p>Discover the stories, experiences, reflections, and acts of service connecting our communities. Published once each Bahá’í month, <em>Threads of Light</em> celebrates meaningful efforts, shared learning, and the connections that bring us closer together.</p>
+  <div class="actions">
+    <a class="button gold" href="https://threads-of-light-gspstp.subscribepage.io" target="_blank" rel="noopener noreferrer">Subscribe to New Issues</a>
+    <a class="button" href="#issues">Read the Inaugural Issue</a>
+    <a class="button" href="#contribute">Share Your Story</a>
+  </div>
+  <p class="small">Inaugural issue: November 4, 2026, the Feast of Qudrat.</p>
+</section>
+
+<section class="section two" id="subscribe">
+  <div>
+    <h2>Receive Threads of Light</h2>
+    <p>Sign up to receive each issue by email. Subscription is free and voluntary, and you may unsubscribe at any time using the link in our emails or by contacting us.</p>
+    <p><a class="button gold" href="https://threads-of-light-gspstp.subscribepage.io" target="_blank" rel="noopener noreferrer">Subscribe</a></p>
+  </div>
+  <div class="card">
+    <img class="qr" src="threads-of-light-subscribe.jpg" alt="Subscription card with QR code for Threads of Light">
+    <p class="small" style="text-align:center">Scan the code or use the subscription link above.</p>
+  </div>
+</section>
+
+<section class="section" id="issues">
+  <h2>Current and Past Issues</h2>
+  <p>Explore our published issues, each featuring stories, spiritual reflections, and learning from community life.</p>
+  <div class="archive">
+    <div class="eyebrow">Issue 01 · November 4, 2026</div>
+    <h3>Qudrat (Power): A Community Connected Through Service</h3>
+    <p>Our inaugural issue explores Unit Convention, the Bountiful Bookstand, Thornton Chase, Ḥuqúqu’lláh, the Hidden Words, virtues, and the Nine Year Plan.</p>
+    <a class="button" href="threads-of-light-issue-01-qudrat-power.pdf" target="_blank" rel="noopener noreferrer">Read Issue 01 (PDF)</a>
+    <p class="small" style="margin:12px 0 0">Opens the 26-page issue in a new tab. Additional issues will appear here as they are published.</p>
+  </div>
+</section>
+
+<section class="section" id="writings">
+  <h2>Authoritative Writings and Further Reading</h2>
+  <p>The following primary source documents are provided to support further study of themes explored in <em>Threads of Light</em>. These messages are from the Universal House of Justice; the publication's own commentary and reflections are independent editorial material.</p>
+  <div class="resource">
+    <h3>30 December 2021: To the Conference of the Continental Boards of Counsellors</h3>
+    <p>The Universal House of Justice's message outlining the vision, scope, and framework for the Nine Year Plan.</p>
+    <a href="uhj-30-december-2021.pdf" target="_blank" rel="noopener noreferrer">Read the message (PDF)</a>
+  </div>
+  <div class="resource">
+    <h3>Riḍván 2022: To the Bahá’ís of the World</h3>
+    <p>The Universal House of Justice's message on the launch of the Nine Year Plan and its two phases.</p>
+    <a href="uhj-ridvan-2022.pdf" target="_blank" rel="noopener noreferrer">Read the message (PDF)</a>
+  </div>
+  <p class="small">These are reproduced reference documents, not original writings by the editors of Threads of Light. Further authoritative sources may be added to this library over time.</p>
+</section>
+
+<section class="section" id="contribute">
+  <h2>Share Your Story</h2>
+  <p>We welcome community stories, reflections, experiences, initiatives, and acts of service. You do not need to write a polished article. Tell us what happened, who was involved, when and where, and why the experience mattered. We may follow up to clarify details or request permission for photos or quotations.</p>
+  <div class="card">
+    <h3>Send a contribution</h3>
+    <p>Email your story to <a href="mailto:threadsoflightnews@gmail.com?subject=Threads%20of%20Light%20Story%20Submission">threadsoflightnews@gmail.com</a>.</p>
+    <p>You may also submit your story using our online submission form.</p>
+    <p><a class="button" href="https://forms.gle/UTMGm5pzWK1a7t4W9" target="_blank" rel="noopener noreferrer">Share Your Story Online</a></p>
+    <p class="small">The form opens in a new tab. You do not need to write a polished article, and you may request that your name be withheld from publication. Submissions are reviewed privately by the editorial team.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>About This Initiative</h2>
+  <p><em>Threads of Light</em> is independently edited and inspired by the spirit of learning, service, and friendship. This page is hosted by The Maryam Mottaghi Foundation during the publication’s initial pilot period. The publication is not an official communication of the Bahá’í institutions.</p>
+  <p class="small">Subscriber information is managed through our email delivery service. Story submissions are reviewed by the editorial team, and submission does not guarantee publication. Please do not submit private information about others without their permission.</p>
+</section>
+</main>
+
+<footer>
+  Threads of Light · Stories • Learning • Service Across the Clusters
+  <br>
+  <a href="mailto:threadsoflightnews@gmail.com">threadsoflightnews@gmail.com</a>
+  <br>
+  <a href="index.html" target="_blank" rel="noopener noreferrer">The Maryam Mottaghi Foundation</a>
+</footer>
+</body>
+</html>
